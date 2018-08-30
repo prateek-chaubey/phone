@@ -1,0 +1,1181 @@
+<!--
+
+MADE BY PRATEEK CHAUBEY © 2018-present
+v0.1
+https://github.com/magic-pc
+Licence- Apache Licence
+https://h4c-k3r.github.io/
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/css/font-awesome.css" >
+<link rel="stylesheet" href="css/animate.css" >
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<title>Smart Phone</title>
+<style type="text/css">
+*{
+margin:0;
+padding:0;
+}
+body{
+padding:15px;
+padding-top:5px;
+
+}
+#mobile-cover{
+margin:auto;
+padding:0;
+background:#000;
+height:430px;
+border-radius:20px;
+width:90%;
+border:3px solid black;
+position:relative;
+}
+#mobile{
+position:relative;
+background:linear-gradient(180deg,blue,purple);
+width:100%;
+height:90%;
+border-radius:20px 20px 0 0 ;
+padding:0;
+overflow:hidden;
+}
+#nav{
+background: red;
+height:30px;
+width:100%;
+border-radius:20px 20px 0 0 ;
+//text-align:center;
+color:#fff;
+}
+#home,#recent{
+position:relative;
+height:20px;
+width:20px;
+border-radius:50%;
+border:2px solid white;
+left:135px;
+}
+#recent{
+height:17px;
+width:17px;
+border-radius:2px;
+position:absolute;
+left:30px;
+margin:0;
+
+}
+#back{
+position:absolute;
+right:-230px;
+height:25px;
+width:25px;
+background-size:cover;
+background-image:url("img/back.png");
+/*border-top: 10px  solid transparent;
+border-bottom:10px solid transparent;
+border-right:20px solid white;*/
+border-radius:0;
+margin:0;
+}
+#cemra{
+background:#101010;
+height:20px;
+width:130px;
+border-radius:0 0 8px 8px;
+margin:auto;
+position:absolute;
+left:83px;
+top:0;
+}
+#miceo{
+height:6px;
+width:60px;
+background:rgba(0,50,50,.9);
+border-radius:5px;
+position:absolute;
+left:30px;
+top:8px;
+}
+#cem{
+height:10px;
+width:10px;
+background:rgba(220,220,220,.9);
+border-radius:50%;
+position:absolute;
+right:3px;
+top:5px;
+}
+#sen{
+height:5px;
+width:5px;
+background:rgba(220,220,220,.9);
+border-radius:50%;
+position:absolute;
+right:30px;
+top:8px;
+}
+#senn{
+height:5px;
+width:20px;
+background:rgba(220,220,220,.9);
+border-radius:5px;
+position:absolute;
+left:3px;
+top:8px;
+}
+#net{
+height:0;
+width:0;
+border-top: 2px  solid transparent;
+border-bottom:2px solid transparent;
+border-right:4px solid white;
+}
+.block{
+height:100%;
+width:100%;
+background:rgba(0,0,0,.9);
+top:0;
+left:0;
+position:absolute;
+border-radius:20px 20px 0 0;
+text-align:center;
+line-height:400px;
+color:white;
+display:none;
+font-size:20px;
+}
+.m{
+display:block;
+}
+#men{
+background:url("img/menu2.png");
+width:50px;
+height:50px;
+position:relative;
+border-radius:50%;
+left:120px;
+background-size:cover;
+}
+#bot{
+position:absolute;
+bottom:3px;
+display:none;
+}
+#pho{
+background:url("img/app05.png");
+width:45px;
+height:45px;
+position:relative;
+left:-40px;
+background-size:cover;
+}
+#cont{
+background:url("img/app02.png");
+width:45px;
+height:45px;
+position:relative;
+left:-30px;
+background-size:cover;
+
+}
+#what{
+background:url("img/app09.png");
+width:45px;
+height:45px;
+position:relative;
+right:-50px;
+background-size:cover;}
+#chro{
+background:url("img/app03.png");
+width:45px;
+height:45px;
+position:relative;
+right:-60px;
+background-size:cover;
+}
+#item{
+animation:zoom .5s;
+background:rgba(255,255,255,1);
+height:65%;
+width:70%;
+position:fixed;
+left:55px;
+border-radius:5px;
+top:40px;
+display:none;
+}
+@keyframes zoom{
+from{transform:scale(0);}to{transform:scale(1);}
+}
+#calc{margin-left:10px;}
+#calc,#cale,#con{
+background:url("img/app01.png");
+width:45px;
+height:45px;
+position:relative;
+right:-0px;
+background-size:cover;}
+#cale{right:-25px;background:url("img/app11.png"); background-size:cover;}
+#con{right:-35px;background:url("img/app02.png"); background-size:cover;}
+
+#lo{
+height:50px;
+width:8px;
+background:#000;
+border-radius:0 5px 5px 0;
+position:absolute;
+right:25px;
+top:100px;
+}
+.kl{
+display:flex;
+}
+.n{
+display:none;
+}
+.slider {
+    -webkit-appearance: none;
+    width: 50%;
+    height: 5px;
+    border-radius: 5px;   
+    background: #000;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    transition:.5s;
+    margin:0;
+    position:relative;
+    top:-3px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; 
+    background: white;
+    cursor: pointer;
+}
+.slider:hover.slider::-webkit-slider-thumb{
+width: 25px;
+height: 25px;
+}
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: red;
+    cursor: pointer;
+}
+
+/*
+MADE BY PRATEEK CHAUBEY © 2018-present
+v0.1
+https://github.com/magic-pc
+*/
+#contant{
+padding:5px;
+background:#999;
+width:100%;
+height:100%;
+display:none;
+}
+#sende{
+margin:auto;
+width:70px;
+height:30px;
+line-height:30px;
+color:white;
+background:#617718;
+text-align:center;
+border-radius:5px;
+}
+#mail{
+background:#644;
+height:100%;
+width:100%;
+text-align:left; font-size:20px;
+color:white;
+display:none;
+}
+#mail textarea{
+border-radius:5px;
+border:0;
+padding:4px;
+outline:none;
+margin-left:5px;margin-top:3px;
+}
+#header{
+background:rgb(200,50,50);
+color:#fff;
+text-align:center;
+font-size:30px;
+font-weight:bold;
+height:60px;
+}
+#clock,#writer,#google,#chrome,#drive{
+background:#009999;
+height:100%;
+width:100%;
+display:none;
+}
+#google,#writer,#chrome,#drive {background:#666;}
+
+#clock iframe,#contant iframe,#h{
+width:100%;
+height:100%;
+background:transparent;
+margin:auto;
+border:0;
+}
+#google iframe,#writer iframe,#chrome iframe,#drive iframe{
+width:100%;
+height:100%;
+margin:auto;
+border:0;
+}
+.tr{
+position:absolute;
+bottom:5px;
+padding:10px;
+}
+.tr input{
+height:40px;
+width:80%;
+border-radius:15px;
+background:brown;
+color:#fff;
+font-size:20px; 
+border:0;
+padding:3px;
+outline:0;
+
+} 
+.tr a{
+color:#666;
+}
+.tr button {
+background:transparent;
+border:0;
+font-size:30px;
+color:#111;
+margin-left:5px;
+}
+#whataapp{
+background:url("img/backwhat.png");
+height:100%;
+width:100%;
+background-size:cover;
+background-repeat:no-repeat;
+display:none;
+}
+.prof{
+background:green;
+height:50px;
+color:#fff;
+font-size:25px;
+width:100%;
+display:flex;
+}
+.k{
+margin-top:10px;
+margin-left:5px;
+}
+.av{
+background:url("img/avatar.png");
+background-size:cover;
+background-repeat:no-repeat;
+background-color:#fff;
+height:90%;
+width:45px;
+margin-top:3px;
+border-radius:50%;
+margin-left:15px;
+}
+#phone{
+width:100%;
+height:100%;
+background:#099;
+text-align:center;
+display:none;
+}
+a{
+color:#fff;
+}
+#phone button{
+background:#990;
+color:white;
+width:33.3333%;
+height:14.33333%;
+border:0;
+}
+#ph{
+background:transparent;
+width:80%;
+font-weight:bold;
+color:black;
+text-align:center;
+font-size:30px;
+border:0;
+height:70px;
+}
+#phone button{
+font-size:20px;
+outline:none;
+}
+#calculator{
+background:#272882;
+width:100%;
+height:100%;
+padding:0;
+display:none;
+}
+#ca{
+border:0;
+width:100%;
+margin:0;background:transparent;
+position:relative;top:0;
+font-size:30px;
+color:white;
+text-align:right;
+}
+#calculator button{
+background:#777;
+border:1px solid silver;
+width:25%;
+height:14%;
+outline:none;
+font-size:20px;
+}
+#calculator button:active{
+background:#999;
+}
+#calculator button:nth-child(31) {
+background:#f80;
+}
+#caller{
+background:green;border-radius:50%;color:white;
+}
+#calender{
+display:none;
+}
+table {
+   width: 70vw; 
+   height: 60vh;
+   position: absolute;
+   left: 5vw;
+   top: 20vh;
+   background-color: transparent;
+}
+
+/*
+MADE BY PRATEEK CHAUBEY © 2018-present
+v0.1
+https://github.com/magic-pc
+*/
+
+td {
+   padding: 0; 
+   margin: 0;
+   width: 15vw;
+   height: 15vw;
+   text-align: center;
+}
+
+#cal {
+    position: static;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-collapse: collapse;
+    background:#aaa;
+}
+.day {
+    height: auto;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    border-radius:5px;
+}
+.thd {
+    background: #DDD;
+    border-radius:0;
+}
+#datetitle {
+    background: #3f3;
+    border-radius:0;
+}
+* {
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    font-family: 'Roboto';
+}
+a{text-decoration:none;}
+.slider{transform:rotate(180deg);}
+#timed{position:relative;text-align:center;top:100px; font-size:40px; font-weight:lighter;color:#fff;}
+#present{margin:0;top:0;left:0;}
+</style>
+</head>
+<body>
+<div id="lo"  onclick="lo()"></div>
+<div id="mobile-cover" >
+<div id="mobile" >
+<div id="bot" ><div id="men" onclick="menu()"></div><div onclick="call()" id="pho" ></div><div id="cont" onclick="contants()"></div><div id="what" onclick="whatsapp()" ></div><div id="chro" onclick="chrome()"></div></div>
+<div id="rec"  class="block" >No Recent App</div>
+<div id="item" >
+<div style="display:flex;margin-top:10px;margin-left:5px;" >
+<div id="calc" onclick="calculato()"></div>
+<div id="chro" onclick="chrome()" style="right:-10px;" ></div>
+<div id="cale" onclick="calend()" ></div>
+<div id="con" onclick="contants()"></div>
+</div>
+<div style="display:flex;margin-top:10px;margin-left:5px;" >
+<div id="calc" onclick="clock()" style="background-image:url('img/app04.png')" ></div>
+<div id="chro" onclick="mail()" style="right:-10px;background-image:url('img/app12.png')" ></div>
+<div id="cale" onclick="settings()" style="background-image:url('img/app06.png')"></div>
+<div id="con" onclick="call()" style="background-image:url('img/app05.png')"></div>
+</div>
+<div style="display:flex;margin-top:10px;margin-left:5px;" >
+<a href="market://details?id=com.android.vending" ><div id="calc" style="background-image:url('img/app07.png')"></div></a>
+<a href="http://maps.google.com/?q=New+York" ><div id="chro" style="right:-10px;background-image:url('img/app10.png')" ></div></a>
+<a href="fblite://" ><div id="cale" style="background-image:url('img/app08.png')"></div></a>
+<div id="con" onclick="whatsapp()" style="background-image:url('img/app09.png')"></div>
+</div>
+<div style="display:flex;margin-top:10px;margin-left:5px;" >
+<a href="vnd.youtube:8xn9iq3lG_w" ><div id="calc" style="background-image:url('img/app13.png')"></div></a>
+<a href="fb://" ><div id="chro"  style="right:-10px;background-image:url('img/ze.png')" ></div></a>
+<div id="cale" onclick="writer()" style="background-image:url('img/app1.png')"></div>
+<div id="con" onclick="drive()" style="background-image:url('img/app2.png')"></div>
+</div><br>
+<div style="margin:auto;color:white; background:#933; border-radius:6px;width:100px;height:30px; font-size:20px;line-height:30px; text-align:center;" ><a href="https://github.com/magic-pc/phone/" style="text-decoration:none;" ><i class="fa fa-github" ></i> Github</a></div>
+</div>
+<div id="nav" >
+<span style="display:inline;position:absolute;top:3px;left:10px;" ><i class="fa fa-battery-full"  ></i> <span style=" font-size:14px;" id="nocharge" ></span><i class="fa fa-wifi" style="margin-left:1px;"  ></i></span>
+<span id="time" style="position:absolute;top:2px;right:15px;color:white; font-size:15px;"  ></span>
+<div id="loc" style="background:#000"  class="block" ></div>
+<!--<div id="cemra" ><div id="senn" ></div><div id="miceo" ></div><div id="sen" ></div><div id="cem" ></div></div>-->
+</div>
+<div id="calender" >
+    <table id="cal" border="0">
+        <tr>
+            <td colspan="7" class="day" id="datetitle"></td>
+        </tr>
+        <tr>
+            <th class="day thd" style="color:red" >Sun</th>
+            <th class="day thd">Mon</th>
+            <th class="day thd">Tue</th>
+            <th class="day thd">Wed</th>
+            <th class="day thd">Thu</th>
+            <th class="day thd">Fri</th>
+            <th class="day thd">Sat</th>
+        </tr>
+        <tr id="first">
+            <td class="day" style="color:red"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+        </tr>
+        <tr>
+            <td class="day" style="color:red"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+        </tr>
+        <tr>
+            <td class="day" style="color:red"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+        </tr>
+        <tr>
+            <td class="day" style="color:red"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+        </tr>
+        <tr><!--
+        /*
+        MADE BY PRATEEK CHAUBEY © 2018-present
+        v0.1
+        https://github.com/magic-pc
+        */
+        -->
+            <td class="day" style="color:red"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+        </tr>
+        <tr>
+            <td class="day" style="color:red"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+            <td class="day"></td>
+        </tr>
+    </table>
+</div>
+<div id="calculator" >
+<input type="text" readonly="readonly" id="ca"  /><br>
+<button onclick="document.getElementById('ca').value += 7;">7</button><button onclick="document.getElementById('ca').value += 8;">8</button><button onclick="document.getElementById('ca').value += 9;">9</button><button onclick="var you = document.getElementById('ca').value.substring(0,document.getElementById('ca').value.length-1);document.getElementById('ca').value = you;">Del</button><br>
+<button onclick="document.getElementById('ca').value += 4;">4</button><button onclick="document.getElementById('ca').value += 5;">5</button><button onclick="document.getElementById('ca').value += 6;">6</button><button onclick="document.getElementById('ca').value += '/';">÷</button><br>
+<button onclick="document.getElementById('ca').value += 3;">3</button><button onclick="document.getElementById('ca').value += 2;">2</button><button onclick="document.getElementById('ca').value += 1;">1</button><button onclick="document.getElementById('ca').value += '*';">×</button><br>
+<button onclick="document.getElementById('ca').value += '.';">.</button><button onclick="document.getElementById('ca').value += 0;">0</button><button onclick="document.getElementById('ca').value += '-';">-</button><button onclick="document.getElementById('ca').value += '+';">+</button><br>
+<button onclick="document.getElementById('ca').value += Math.PI;">π</button><button onclick="document.getElementById('ca').value += '(';">(</button><button onclick="document.getElementById('ca').value += ')';">)</button><button onclick="document.getElementById('ca').value += '%';">%</button><br>
+<button onclick="document.getElementById('ca').value = Math.sqrt(eval(document.getElementById('ca').value));">√</button><button onclick="document.getElementById('ca').value = Math.cbrt(eval(document.getElementById('ca').value));">³√</button><button onclick="document.getElementById('ca').value='';">C</button><button onclick="document.getElementById('ca').value = eval(document.getElementById('ca').value) ;">=</button><br>
+
+</div>
+<div id="phone" >
+<input type="text" id="ph" readonly="readonly" ><i type="button" class="fa fa-long-arrow-left"   style="color:white; font-size:20px;"   onclick="var you = document.getElementById('ph').value.substring(0,document.getElementById('ph').value.length-1);document.getElementById('ph').value = you;"></i><br>
+<button onclick="document.getElementById('ph').value += 1;">1</button><button onclick="document.getElementById('ph').value += 2;">2</button><button  onclick="document.getElementById('ph').value += 3;">3</button><br>
+<button  onclick="document.getElementById('ph').value += 4;">4</button><button onclick="document.getElementById('ph').value += 5;" >5</button><button  onclick="document.getElementById('ph').value += 6;">6</button><br>
+<button  onclick="document.getElementById('ph').value += 7;">7</button><button  onclick="document.getElementById('ph').value += 8;">8</button><button  onclick="document.getElementById('ph').value += 9;">9</button><br>
+<button  onclick="document.getElementById('ph').value += '*';">*</button><button  onclick="document.getElementById('ph').value += 0;">0</button><button  onclick="document.getElementById('ph').value += '#';">#</button><br>
+<button id="coll" style="background:green;border-radius:50%; width:20%;margin:3px;color:white;" ><i class="fa fa-phone" ></i></button>
+</div>
+<div id="whataapp" >
+<div class="prof" ><i class="k fa fa-long-arrow-left" onclick="back()"></i> <div class="av" ></div></div><br>
+<div class="tr" ><input placeholder="Enter Your Message"  type="text" id="tmess" ><button style="color:#555;"  id="son" ><i  class="fa fa-send" ></i></button></div>
+</div>
+<div id="clock" >
+<iframe src="HTML/clock.html" ></iframe>
+</div>
+<div id="google" >
+<iframe src="https://google.co.in/" ></iframe>
+</div>
+<div id="mail" >
+<div id="header"><img  height="60px" width="60px"   src="img/app12.png" /></div>
+ &nbsp;To:<br><textarea type="text" placeholder="Enter E-mail"  id="to"  ></textarea><br>
+  &nbsp;Subject:<br><textarea type="text" placeholder="Subject"  id="subd"  ></textarea><br>
+   &nbsp;Compose:<br><textarea style="width:90%; height:50px;"  type="text" placeholder="Compose"  id="com"  ></textarea>
+<div id="sende" >Send</div>
+</div>
+<div id="contant" >
+<iframe src="HTML/contant.html" ></iframe>
+</div>
+<div id="writer" >
+<iframe src="HTML/html.html" style="background:white;" ></iframe>
+</div>
+<div id="chrome" >
+<iframe src="https://bing.com" ></iframe>
+</div>
+<div id="drive" >
+<iframe src="https://drive.google.com" ></iframe>
+</div>
+<div id="settings" >
+<!--
+/*
+MADE BY PRATEEK CHAUBEY © 2018-present
+v0.1
+https://github.com/magic-pc
+*/
+-->
+<div class="headh" >&nbsp;Settings</div>
+Brightness: <input id="bright" value="10"  type="range"  class="slider"  max="80" min="10"  ><br>
+Night Mode:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label class="switch"><input onchange="nightmo()" type="checkbox"><div class="slier round"></div></label>
+<div class="headh" >&nbsp; About</div>
+<div style="text-align:left;color:gold" ><span style="color:#561168" >Developer:</span> Prateek Chaubey
+<span style="color:#561168" >Version:</span> 0.1<br>
+<span style="color:#561168" >OS:</span> Android N
+<div class="headh" >&nbsp; Background</div>
+<div style="display:flex;padding:5px;" >
+<div class="backcol" onclick="back();$('#mobile').css({'background':'linear-gradient(180deg,#ff0000,#fff000)'});"></div>
+<div class="backcol" onclick="back();$('#mobile').css({'background':'linear-gradient(180deg,blue,purple)'});" style="background:linear-gradient(180deg,blue,purple)" ></div>
+<div class="backcol" onclick="back();$('#mobile').css({'background':'linear-gradient(135deg,#777720 10%,rgb(50,255,50) 100%)'});" style="background:linear-gradient(135deg,#777720 10%,rgb(50,255,50) 100%)" ></div>
+<div class="backcol" onclick="back();$('#mobile').css({'background':'linear-gradient(180deg,red,violet)'});" style="background:linear-gradient(180deg,red,violet)"></div>
+<div class="backcol"  onclick="back();$('#mobile').css({'background':'linear-gradient(180deg,#781930,#728800)'});" style="background:linear-gradient(180deg,#781930,#728800)"></div>
+</div><br>
+<center>PKC Inc.</center>
+</div>
+</div>
+<div id="password" ><br>
+<center><span id="times" ></span></center><br>
+<input readonly="readonly"   placeholder="Enter Password"  type="password" id="psd" /><br>
+<button  onclick="document.getElementById('psd').value += 1;">1</button><button  onclick="document.getElementById('psd').value += 2;">2</button><button  onclick="document.getElementById('psd').value += 3;">3</button><br>
+<button  onclick="document.getElementById('psd').value += 4;">4</button><button  onclick="document.getElementById('psd').value += 5;">5</button><button  onclick="document.getElementById('psd').value += 6;">6</button><br>
+<button  onclick="document.getElementById('psd').value += 7;">7</button><button  onclick="document.getElementById('psd').value += 8;">8</button><button  onclick="document.getElementById('psd').value += 9;">9</button><br>
+<button onclick="window.location.href=window.location.href;"><i class="fa fa-refresh" ></i></button><button  onclick="document.getElementById('psd').value += 0;">0</button><button onclick="pose()">OK</button>
+</div>
+<div id="timed" ></div>
+<div id="cemra" ><div id="senn" ></div><div id="miceo" ></div><div id="sen" ></div><div id="cem" ></div></div>
+</div>
+<div class="kl"  style="position:absolute;margin-top:9px;" id="k" >
+<div id="recent" onclick="recent()"></div>
+<div id="home" onclick="home()" ></div>
+<div id="back" onclick="back()"></div>
+</div>
+<div id="brightness" style="background:#000; border-radius:10px;display:block;pointer-events: none;"  class="block op" ></div>
+</div>
+<!--<div id="present" ><br>Your Password is : 1234 <br>In the case that you have forgotten the password then just refresh the page.<br>Made By Prateek Chaubey.</div>-->
+<style type="text/css">
+#present{
+text-align:center;
+font-size:25px;
+position:absolute;height:100%; width:100%;background: linear-gradient(135deg,gold,red); color:white;
+}
+#password button{background:transparent;color:#fff;border:0;outline:0;height:15%; font-size:30px; width:25%;}
+#psd{background:transparent;outline:0; color:#fff;font-size:20px;border:0;text-align:center;}
+#times{font-size:40px;}
+#password{
+width:100%;
+height:100%;
+color:white;
+font-size:20px;
+font-weight:lighter;
+text-align:center;
+background: linear-gradient(180deg,red,violet);
+}
+input::placeholder{color:#fff;}
+.op{opacity:0;}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 15px;
+  text-align:right;
+}
+/*
+MADE BY PRATEEK CHAUBEY © 2018-present
+v0.1
+https://github.com/magic-pc
+*/
+
+.switch input {display:none;  text-align:right;}
+
+.slier {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #aaa;
+  -webkit-transition: .4s;
+  transition: .4s;
+    text-align:right;
+}
+
+.slier:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: -4px;
+  bottom: -3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slier {
+  background-color: #f73333;
+}
+
+input:focus + .slier {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slier:before {
+ -webkit-transform: translateX(20px);
+ -ms-transform: translateX(20px);
+ transform: translateX(20px);
+}
+
+/* Rounded sliders */
+
+.slier.round {
+  border-radius: 20px;
+}
+.slier.round:before {
+  border-radius: 50%;
+}
+.backcol{
+height:60px;
+width:60px;
+margin:2px;
+border-radius:3px;
+background:linear-gradient(180deg,#ff0000,#fff000);
+}
+#settings .headh{
+background:#506660;
+height:30px;
+width:100%;
+color:#fff;
+text-align:left;
+}
+#settings{
+width:100%;
+height:100%;
+text-align:center;
+background:#718881;
+color:#521333;
+font-weight:bold;
+font-size:20px;
+display:none;
+}
+.grey{background:grey;}
+body {transition:.2s;}
+.greyop{opacity:0.33;}
+
+</style>
+<script type="text/javascript">
+/*
+MADE BY PRATEEK CHAUBEY © 2018-present
+v0.1
+https://github.com/magic-pc
+*/
+/*
+MADE BY PRATEEK CHAUBEY © 2018-present
+v0.1
+https://github.com/magic-pc
+*/
+/*
+MADE BY PRATEEK CHAUBEY © 2018-present
+v0.1
+https://github.com/magic-pc
+*/
+alert('Welcome \n\n Use 1234 as your Password.');
+function pose(){
+var pass = document.getElementById("psd").value;
+if(pass=="1234"){
+document.getElementById("password").style.display="none";
+$("#nav").css({"background":"transparent"});
+document.getElementById("bot").style.display="flex";
+document.getElementById("psd").placeholder="Enter Password";
+}else{
+document.getElementById("psd").placeholder="Incorrect Password";
+document.getElementById("psd").value="";
+document.getElementById("psd").style.animation="shake .5s";
+setInterval(function(){document.getElementById("psd").style.animation="shke .5s";},500);
+}}
+function nightmo(){
+document.body.classList.toggle("grey");
+document.getElementById("brightness").classList.toggle("greyop");
+}
+$("#bright").on("input", function() {
+var val = $(this).val();
+if (val.length < 3 ) {
+val = "0." + val;
+}
+else{
+val ="0.8";
+}
+$("#brightness").css({"opacity":val});
+});
+function writer(){
+document.getElementById("writer").style.display="block";
+$("#nav").css({"background":"#d81b60"});
+$("#bot").css({"display":"none"});
+$("#item").css({"display":"none"});
+it=6;
+}
+function settings(){
+document.getElementById("settings").style.display="block";
+$("#nav").css({"background":"#718881"});
+$("#bot").css({"display":"none"});
+$("#item").css({"display":"none"});
+it=6;
+}
+function contants(){
+document.getElementById("contant").style.display="block";
+$("#nav").css({"background":"#999"});
+$("#bot").css({"display":"none"});
+$("#item").css({"display":"none"});
+it=6;
+}
+function chrome(){
+document.getElementById("chrome").style.display="block";
+$("#nav").css({"background":"#222"});
+$("#bot").css({"display":"none"});
+$("#item").css({"display":"none"});
+it=6;
+}
+function drive(){
+document.getElementById("drive").style.display="block";
+$("#nav").css({"background":"#682993"});
+$("#bot").css({"display":"none"});
+$("#item").css({"display":"none"});
+it=6;
+}
+function mail(){
+document.getElementById("mail").style.display="block";
+$("#nav").css({"background":"rgb(200,50,50)"});
+$("#bot").css({"display":"none"});
+$("#item").css({"display":"none"});
+it=6;
+}
+function clock(){
+document.getElementById("clock").style.display="block";
+$("#nav").css({"background":"#099"});
+$("#bot").css({"display":"none"});
+$("#item").css({"display":"none"});
+it=6;
+}
+function whatsapp(){
+document.getElementById("whataapp").style.display="block";
+$("#nav").css({"background":"green"});
+$("#bot").css({"display":"none"});
+$("#item").css({"display":"none"});
+it=6;
+}
+function call(){
+document.getElementById("phone").style.display="block";
+$("#nav").css({"background":"#099"});
+$("#bot").css({"display":"none"});
+$("#item").css({"display":"none"});
+it=6;
+}
+setInterval(colll,500)
+function colll(){
+var valu=document.getElementById("ph").value;
+document.getElementById("coll").innerHTML='<a href="tel:'+valu+'"><i class="fa fa-phone"><'+'/'+'i><'+'/'+'a>';
+var treat = document.getElementById("tmess").value;
+document.getElementById("son").innerHTML='<a href="whatsapp://send?text='+treat+'"><i class="fa fa-send"><'+'/'+'i><'+'/'+'a>';
+var malt = document.getElementById("to").value;
+var subjt= document.getElementById("subd").value;
+var boy= document.getElementById("com").value;
+document.getElementById("sende").innerHTML='<a href="mailto:'+malt+"?subject="+subjt+"&body="+boy+'">Send'+'<'+'/'+'a>';
+}
+
+/*
+MADE BY PRATEEK CHAUBEY © 2018-present
+v0.1
+https://github.com/magic-pc
+*/
+/*
+MADE BY PRATEEK CHAUBEY © 2018-present
+v0.1
+https://github.com/magic-pc
+*/
+function calend(){
+document.getElementById("calender").style.display="inline";
+$("#nav").css({"background":"#aaa"});
+$("#bot").css({"display":"none"});
+$("#item").css({"display":"none"});
+it=6;
+}
+var re =0;
+var it=0;
+/*
+MADE BY PRATEEK CHAUBEY © 2018-present
+v0.1
+https://github.com/magic-pc
+*/
+function back(){
+document.getElementById("phone").style.display="none";
+document.getElementById("item").style.display="none";
+document.getElementById("bot").style.display="flex";
+if(re==5){
+document.getElementById("rec").classList.toggle("m")}
+$("#nav").css({"background":"transparent"});
+$("#calender").css({"display":"none"});
+$("#calculator").css({"display":"none"});
+$("#whataapp").css({"display":"none"});
+$("#clock").css({"display":"none"});
+$("#google").css({"display":"none"});
+$("#mail").css({"display":"none"});
+$("#contant").css({"display":"none"});
+$("#chrome").css({"display":"none"});
+$("#drive").css({"display":"none"});
+$("#settings").css({"display":"none"});
+$("#timed").css({"display":"block"});
+/*
+MADE BY PRATEEK CHAUBEY © 2018-present
+v0.1
+https://github.com/magic-pc
+*/
+$("#writer").css({"display":"none"});
+/*if(it==6){
+document.getElementById("item").style.display="block";}
+*/it=0;
+re=0;
+}
+function calculato(){
+document.getElementById("calculator").style.display="block";
+$("#nav").css({"background":"#272882"});
+$("#bot").css({"display":"none"});
+$("#item").css({"display":"none"});
+it=6;
+}
+function home(){
+if(it==6){
+back();} else{
+
+$("#bot").css({"display":"none"});
+document.getElementById("google").style.display="block";
+$("#nav").css({"background":"#888"});
+}}
+//////////////////////////////////////
+    function cal() {
+        var calBox = document.querySelector("#cal");
+        var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+        var months = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+        var date = new Date();
+        var maxDays = 31;
+        var month = date.getMonth();
+        if (month == 0 || month == 2 || month == 4 || month == 6 || month == 7 || month == 9 || month == 11) {
+            maxDays = 31;
+        } else if (month == 1) {
+            maxDays = 28;
+        } else if (month == 3 || month == 5 || month == 8 || month == 10) {
+            maxDays = 30;
+        }
+        var day = days[date.getDay()];
+        // Day of Week ^
+        var dateNum = date.getDate();
+        // Day of Month ^
+        // Calculate first day of month
+        date.setDate(1)
+        var dateX = date.getDay();
+        date.setDate(dateNum)
+        var i = dateX;
+        while (dateX > 0) {
+            if ((dateX % 6) >= 1) {
+                dateX -= 6;
+            } else {
+                i -= dateX
+                dateX -= dateX;
+            }
+        }
+        i += 8;
+        $(".day").eq(0).text(months[month]);
+        $(".day").eq(i).text("1")
+        var cnt = 1;
+        while (cnt <= maxDays) {
+            $(".day").eq(i).text(" " + cnt + " ");
+            ++cnt;
+            ++i;
+        }
+        $(".day:contains(' " + dateNum + " ')").css({
+            "background": "#DDD"
+        });
+    }
+    cal();
+    /////////////////    /////////////////
+function lo(){
+back();
+/*
+MADE BY PRATEEK CHAUBEY © 2018-present
+v0.1
+https://github.com/magic-pc
+*/
+$("#password").css({"display":"block"});
+document.getElementById("k").classList.toggle("n");
+document.getElementById("loc").classList.toggle("m");
+document.getElementById("ca").classList.toggle("n");
+document.getElementById("son").classList.toggle("n");
+document.getElementById("tmess").classList.toggle("n");
+$("#bot").css({"display":"none"});
+$("#nav").css({"background":"red"});
+document.getElementById("psd").value="";
+//back();
+}
+function menu(){
+it=6;
+$("#timed").css({"display":"none"});
+document.getElementById("item").style.display="block";
+document.getElementById("bot").style.display="none";
+}
+function recent(){
+it=6;
+re=5;
+$("#item").css({"display":"none"});
+$("#bot").css({"display":"flex"});
+document.getElementById("rec").classList.toggle("m");
+}
+
+
+    ///////////////////////
+setInterval(function(){
+var time= new Date();
+var hrs = time.getHours();
+var min = time.getMinutes();
+var en = 'AM';
+if(hrs>12){
+en='PM';
+}
+if(hrs>12){
+hrs=hrs-12;
+}
+if(hrs<10){
+hrs='0'+hrs;
+}
+if(min<10){
+min='0'+min;
+}
+document.getElementById("times").innerHTML=hrs +':'+min+' '+en;
+document.getElementById("timed").innerHTML=hrs +':'+min+' '+en;
+document.getElementById("time").innerHTML=hrs +':'+min+' '+en;
+},50);
+///////////////////////)
+var battery_level; 
+navigator.getBattery().then(function(battery) { 
+ function updateAllBatteryInfo(){ 
+ battery_level=(battery.level*100)|0; 
+ updateLevelInfo(); 
+ } 
+ updateAllBatteryInfo(); 
+ battery.addEventListener('levelchange', 
+ function(){ 
+ updateLevelInfo(); 
+ }); 
+ function updateLevelInfo(){  
+ setText(battery_level+"%"); 
+  } 
+  }); 
+ function setText(msg){
+ document.getElementById("nocharge").innerText=msg; 
+ };
+/*
+MADE BY PRATEEK CHAUBEY © 2018-present
+v0.1
+https://github.com/magic-pc
+*/
+</script>
+</body>
+</html>
+
+
+<!--
+/*
+MADE BY PRATEEK CHAUBEY © 2018-present
+v0.1
+https://github.com/magic-pc
+*/
+<a href="market://details?id=com.android.vending" >kdk</a>
+<a href="fb://" >jjs</a>
+<a href="instagram://" >jdk</a>
+<a href="fblite://" >jks</a>
+<a href="whatsApp://send?text=Hello" ></a>
+<a href="vnd.youtube:8xn9iq3lG_w" >yyoutyk</a>
+<a href="http://maps.google.com/?q=New+York" >map</a>
+-->
