@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style>img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] { display: none; }</style>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css">
+</head>
+<body>
+<style type="text/css">
+*{
+font-family:lato;
+outline:0;
+}
+.topn{
+height:30px;
+width:100%;
+background:rgb(110,52,52);
+position:absolute;
+top:0;
+left:0;
+}
+.bt{
+height:40px;
+width:100%;
+background:rgb(110,52,52);
+position:absolute;
+bottom:5px;
+border-radius:0px 0px 25px 25px;
+left:0;
+}
+.hea{
+height:40px;
+width:100%;
+background:rgb(90,40,40);
+position:absolute;
+top:30px;
+left:0;
+line-height:40px;
+text-align:center;
+color:#fff;
+opacity:7;
+
+}.clo{
+position:absolute;
+top:70px;
+left:0px;
+height:77%;
+background:white;
+width:100%;
+}
+
+</style>
+<div class="topn" ></div>
+<div class="hea" ></div>
+<div class="bt" ></div>
+<div class="clo" >
+<div id="calculator" >
+<br><br>
+<input type="text"   readonly="readonly" id="ca"  /><br>
+<input type="text"   readonly="readonly" id="c"  /><br>
+<button onclick="document.getElementById('ca').value += 7;">7</button><button onclick="document.getElementById('ca').value += 8;">8</button><button onclick="document.getElementById('ca').value += 9;">9</button><button style="background:grey;"  onclick="var you = document.getElementById('ca').value.substring(0,document.getElementById('ca').value.length-1);document.getElementById('ca').value = you;">Del</button><br>
+<button onclick="document.getElementById('ca').value += 4;">4</button><button onclick="document.getElementById('ca').value += 5;">5</button><button onclick="document.getElementById('ca').value += 6;">6</button><button style="background:grey;" onclick="document.getElementById('ca').value += '/';">÷</button><br>
+<button onclick="document.getElementById('ca').value += 3;">3</button><button onclick="document.getElementById('ca').value += 2;">2</button><button onclick="document.getElementById('ca').value += 1;">1</button><button style="background:grey;" onclick="document.getElementById('ca').value += '*';">×</button><br>
+<button onclick="document.getElementById('ca').value += '.';">.</button><button onclick="document.getElementById('ca').value += 0;">0</button><button onclick="document.getElementById('ca').value += '-';">-</button><button onclick="document.getElementById('ca').value += '+';" style="background:grey;">+</button><br>
+<button style="background:grey;" onclick="document.getElementById('ca').value = Math.sqrt(eval(document.getElementById('ca').value));">√</button><button style="background:grey;" onclick="document.getElementById('ca').value = Math.cbrt(eval(document.getElementById('ca').value));">³√</button><button onclick="document.getElementById('ca').value='';" style="background:grey;">C</button><button onclick="document.getElementById('ca').value = eval(document.getElementById('ca').value) ;">=</button>
+
+</div>
+<style type="text/css">
+#calculator{
+background:rgb(90,40,40);
+width:100%;
+height:100%;
+padding:0;
+
+}
+#c{
+border:0;
+width:100%;
+margin:0;background:transparent;
+position:relative;top:0;
+font-size:22px;
+color:white;
+text-align:right;
+}
+#item{padding-left:20px;}
+#ca{
+border:0;
+width:100%;
+margin:0;background:transparent;
+position:relative;top:0;
+font-size:36px;
+color:white;
+text-align:right;
+}
+#calculator button{
+background:#333;
+border:0px solid silver;
+width:25%;
+height:14%;
+outline:none;
+font-size:20px;
+color:#fff;
+}
+#calculator button:active{
+background:#999;
+}
+#calculator button:nth-child(30) {
+background:#f80;
+}
+</style>
+</div>
+</body>
+</html>

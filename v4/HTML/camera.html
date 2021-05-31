@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<style>img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] { display: none; }</style>
+<head>
+<title>Camera</title>
+</head>
+<body>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"> 
+<style type="text/css">
+*{
+padding:0;
+margin:0;
+outline:0;
+font-family:lato;
+}
+.topn{
+height:30px;
+width:100%;
+background:rgba(80,80,80,6);
+position:absolute;
+top:0;
+left:0;
+}
+.bt{
+height:40px;
+width:100%;
+background:rgb(80,80,80);
+position:absolute;
+bottom:5px;
+z-index:99999;
+border-radius:0px 0px 25px 25px;
+left:0;
+}
+.hea{
+height:40px;
+width:100%;
+background:rgb(80,80,50);
+position:absolute;
+top:30px;
+left:0;
+line-height:40px;
+text-align:center;
+color:#fff;
+opacity:7;
+
+}.clo{
+position:absolute;
+top:0px;
+left:0px;
+overflow:hidden;
+color:white;
+background:#444;
+height:90%;
+width:100%;
+}
+#player{
+height:100%;
+width:100%;
+left:0px;
+position:absolute;
+top:-45px;
+}
+#hsks{
+height:80px;
+background:#000;
+width:100%;
+position:absolute;
+bottom:45px;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+#capture{
+height:40px;
+width:40px;
+position:relative;
+background:#fff;
+border-radius:50%;
+border:2px solid white;
+}
+#capture:before{
+content:'';
+display:block;
+height:45px;
+width:45px;
+position:absolute;
+top:-6.5px;
+left:-6.5px;
+border-radius:50%;
+border:2px solid white;
+}
+#vieww{
+height:40px;
+width:40px;
+position:absolute;
+background:url("../img/h.png");
+background-size:cover;
+background-repeat:no-repeat;
+left:20px;
+border-radius:50%;
+
+}
+
+#camer{
+background:#000;
+}
+#gall{
+height:91%;
+width:100%;
+background:red;
+position:absolute;
+top:0px;
+display:none;
+}
+#hsgw{
+height:43px;
+width:100%;
+background:#fff;
+position:absolute;
+bottom:1px;
+line-height:43px;
+}
+#hsgw i{
+margin-left:30px;
+}
+</style>
+<div class="topn" ></div>
+
+<div class="bt" ></div>
+<div id="camer" >
+<div class="clo" id="cloo"  >
+<video id="player"   autoplay></video>
+</div>
+<div id="hsks" >
+<div id="vieww" onclick="jsjus()"></div>
+<button id="capture"></button>
+</div>
+<canvas style="display:none" id="canvas" width=320 height=240></canvas>
+</div>
+<div id="gall" >
+<div id="imgg" >
+<div style="display:flex" class="f" >
+<div id="photo" ></div><div id="photo" style="background:url(../img/ko.png);background-size:cover;"  ></div><div id="photo" style="background:url(../img/bj.png);background-size:cover;"  ></div>
+</div>
+</div>
+<style type="text/css">
+#imgg{
+height:90%;
+width:100%;
+background:#aaa;
+overflow:scroll;
+position:absolute;
+
+}
+#photo{
+height:100px;
+width:100px;
+background:url(../img/h.png);
+background-size:cover;
+}
+#hsgw span{
+margin-left:20px;
+}
+.f{
+display:flex
+}
+</style>
+
+<div id="hsgw" ><i onclick="jsjusb()" class="fas fa-arrow-left" ></i> <span>Total Photos: <span style="margin-left:0"  id="jsh" ></span></span></div>
+<div style="display:none"  id="hs" ></div>
+</div>
+<script>
+var imag=3;
+var cc=document.getElementById("imgg").childElementCount-1;
+
+  const player = document.getElementById('player');
+  const canvas = document.getElementById('canvas');
+  const context = canvas.getContext('2d');
+  const captureButton = document.getElementById('capture');
+
+  const constraints = {
+    video: true,
+  };
+
+  captureButton.addEventListener('click', () => {
+    // Draw the video frame to the canvas.
+    var cmng= new Audio;
+    cmng.src="../s8/st.mp3";
+    document.body.appendChild(cmng);
+    cmng.play();
+    context.drawImage(player, 0, 0, canvas.width, canvas.height);
+if(document.getElementsByClassName('f')[cc].childElementCount==3){
+
+document.getElementById("imgg").innerHTML+="<div class='f' style='display:flex' ><div id='photo'  style='background:url("+canvas.toDataURL()+");background-size:150%' ></div></div>";
+}
+else{
+
+
+document.getElementsByClassName('f')[cc].innerHTML += "<div  id='photo' style='background:url("+canvas.toDataURL()+");background-size:150%' ></div>";
+}
+cc=document.getElementById("imgg").childElementCount-1;
+imag+=1;
+//alert(document.getElementById("imgg").innerHTML)
+    document.getElementById("jsh").innerHTML=imag;
+  });
+
+  // Attach the video stream to the video element and autoplay.
+  navigator.mediaDevices.getUserMedia(constraints)
+    .then((stream) => {
+      player.srcObject = stream;
+    }).catch((hsh) =>{document.getElementById("cloo").innerHTML="<br><br><center>"+hsh+"</center>"});
+    function jsjus(){
+    document.getElementById("camer").style.display="none";
+      document.getElementById("gall").style.display="block";
+          document.getElementById("jsh").innerHTML=imag;
+    }
+    
+    function jsjusb(){
+    document.getElementById("camer").style.display="block";
+      document.getElementById("gall").style.display="none";
+          document.getElementById("jsh").innerHTML=imag;
+    }
+    function checkk(){
+    var x=window.location.search;
+    if(x.indexOf("gall") > -1){
+    jsjus();
+    }else{
+    jsjusb();
+    }
+    }
+    checkk();
+    
+</script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] { display: none; }</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"> 
+<title></title>
+</head>
+<body>
+<style type="text/css">
+*{
+font-family:lato;
+}
+.topn{
+height:30px;
+width:100%;
+background:rgba(5,77,68,6);
+position:absolute;
+top:0;
+left:0;
+}
+.bt{
+height:40px;
+width:100%;
+background:rgba(5,77,68,6);
+position:absolute;
+bottom:5px;
+border-radius:0px 0px 25px 25px;
+left:0;
+}
+.hea{
+height:40px;
+width:100%;
+background:rgb(7,94,85);
+position:absolute;
+top:30px;
+left:0;
+line-height:40px;
+color:#fff;
+opacity:7;
+
+}.clo{
+position:absolute;
+top:70px;
+left:0px;
+height:77%;
+width:100%;
+background:url("../img/back.png");
+}
+.fa-arrow-left{
+font-size:20px;
+position:absolute;
+top:10px;
+left:5px;
+}
+.hea img{
+height:35px;
+width:35px;
+position:absolute;
+top:2px;
+left:30px;
+}
+.k{
+position:absolute;
+left:70px;
+top:-8px;
+}
+.o{
+position:absolute;
+top:8px;
+font-size:12px;
+left:70px;
+}
+.f{
+float:right;
+}
+.f i{
+margin-left:20px;
+}
+.btu{
+background:#fff;
+position:absolute;
+bottom:10px;
+height:35px;
+left:5px;
+width:80%;
+border-radius:18px;
+}
+.btu input{
+height:27px;
+border:0;
+top:2px;
+width:70%;
+outline:0;
+font-size:18px;
+position:absolute;
+left:30px;
+}
+.btu svg{
+margin-top:5px;
+margin-left:5px;
+}
+.zmdi-camera{
+position:absolute;
+right:10px;
+top:5px;
+    color: #7d8488;
+font-size:25px;
+}
+.zmdi-mail-send{
+background: #008a7c;
+border-radius: 50%;
+color: #fff;
+position:absolute;
+right:5px;
+bottom:5px;
+width: 45px;
+height: 45px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+</style>
+<div class="topn" ></div>
+<div class="hea" >
+<i class="fas fa-arrow-left" ></i>
+<img src="../s8/ava.png" /><span class="k" >You</span><span class="o" >online</span>
+<div class="f" ><i class="fas fa-video" ></i><i style="transform:rotateY(180deg);"  class="fas fa-phone" ></i><i style="margin-right:20px"  class="fas fa-paperclip" ></i></div>
+</div>
+<div class="bt" ></div>
+<div class="clo" >
+<div class="btu" >
+<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' id='smiley' x='3147' y='3209'><path fill-rule='evenodd' clip-rule='evenodd' d='M9.153 11.603c.795 0 1.44-.88 1.44-1.962s-.645-1.96-1.44-1.96c-.795 0-1.44.88-1.44 1.96s.645 1.965 1.44 1.965zM5.95 12.965c-.027-.307-.132 5.218 6.062 5.55 6.066-.25 6.066-5.55 6.066-5.55-6.078 1.416-12.13 0-12.13 0zm11.362 1.108s-.67 1.96-5.05 1.96c-3.506 0-5.39-1.165-5.608-1.96 0 0 5.912 1.055 10.658 0zM11.804 1.01C5.61 1.01.978 6.034.978 12.23s4.826 10.76 11.02 10.76S23.02 18.424 23.02 12.23c0-6.197-5.02-11.22-11.216-11.22zM12 21.355c-5.273 0-9.38-3.886-9.38-9.16 0-5.272 3.94-9.547 9.214-9.547a9.548 9.548 0 0 1 9.548 9.548c0 5.272-4.11 9.16-9.382 9.16zm3.108-9.75c.795 0 1.44-.88 1.44-1.963s-.645-1.96-1.44-1.96c-.795 0-1.44.878-1.44 1.96s.645 1.963 1.44 1.963z' fill='#7d8489'/></svg>
+<input id="be"  placeholder="Type a message"  type="text" class="f" >
+<i class="zmdi zmdi-camera" ></i>
+</div>
+<i onclick="window.location.href=('whatsapp://send?text='+document.getElementById('be').value);" class="zmdi zmdi-mail-send" ></i>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] { display: none; }</style>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; " />
+<meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1">
+<title>Game - Shoot the bottle</title>
+<style type="text/css">
+*{
+margin:0;
+outline:0;
+padding:0;
+font-family:lota;
+}
+body{
+background:#333;
+background-size:cover;
+
+}
+#game{
+position:absolute;
+height:100%;
+background:url("Download/bb1.jpg");
+background-position:-5px -5px;
+background-size:2000px;
+background-repeat:no-repeat;
+overflow:hidden;
+width:100%;
+}
+#gun{
+background:url(Game/weapon1.png);
+height:200px;
+background-size:190px;
+background-repeat:no-repeat;
+position:absolute;
+bottom:-80px;
+right:0;
+width:200px;
+}
+#target{
+background:url(Game/target.png);
+height:50px;
+z-index:999999;
+background-position:-10px -20px;
+background-size:50px;
+background-repeat:no-repeat;
+position:absolute;
+width:30px;
+}
+#gameland{
+height:70%;
+overflow:hidden;
+position:absolute;
+width:100%;
+background:url("Download/bb1.jpg");
+background-size:cover;
+background-repeat:no-repeat;
+}
+#b1{
+background:url("Game/b3.png");
+height:120px;
+width:30px;
+background-position:-10px -10px;
+filter:hue-rotate(380deg);
+background-size:50px;
+background-repeat:no-repeat;
+}
+#b2{
+background:url("Game/b3.png");
+height:120px;
+width:30px;
+background-attachment:fixed;
+margin-left:30px;
+background-position:-10px -10px;
+filter:hue-rotate(005922deg);
+background-size:50px;
+background-repeat:no-repeat;
+}
+#b3{
+background:url("Game/b3.png");
+height:120px;
+width:30px;
+background-attachment:fixed;
+margin-left:30px;
+background-position:-10px -10px;
+filter:hue-rotate(810deg);
+background-size:50px;
+background-repeat:no-repeat;
+}
+#b4{
+background:url("Game/b3.png");
+height:120px;
+width:30px;
+background-attachment:fixed;
+margin-left:30px;
+background-position:-10px -10px;
+filter:hue-rotate(61deg);
+background-size:50px;
+background-repeat:no-repeat;
+}
+#b5{
+background:url("Game/b3.png");
+height:120px;
+width:30px;
+background-attachment:fixed;
+margin-left:30px;
+background-position:-10px -10px;
+filter:hue-rotate(610deg);
+background-size:50px;
+background-repeat:no-repeat;
+}
+#b6{
+background:url("Game/b3.png");
+height:120px;
+width:30px;
+background-attachment:fixed;
+margin-left:30px;
+background-position:-10px -10px;
+filter:hue-rotate(81920deg);
+background-size:50px;
+background-repeat:no-repeat;
+}
+#btbar{
+//background:linear-gradient(90deg,red,gold);
+height:10px;
+position:absolute;
+bottom:0px;
+width:100%;
+}
+.shot{
+height:60px;
+width:60px;
+position:absolute;
+background:url("Game/gunshot.png");
+background-repeat:no-repeat;
+background-size:cover;
+}
+#bullet{
+position:absolute;
+padding-left:10px;
+width:100%;
+font-size:25px;
+line-height:40px;
+background: linear-gradient(90deg,red,gold);
+border-bottom:5px solid yellow;
+color:#ff0;
+height:40px;
+z-index:999999999;
+font-weight:bold;
+
+}
+#bullet button{
+background:transparent;
+color:red;
+position:absolute;
+right:20px;
+border:0;
+top:7px;
+font-size:25px;
+font-weight:bold;
+}
+#bullet img{
+height:15px;
+width:45px;
+transform:rotate(160deg);
+}
+#gametrans{
+width:100%;
+margin:auto;
+height:100%;
+overflow:auto;
+left:-360px;
+display:flex;
+position:absolute;
+margin-top:100px;
+/*align-items: center;
+justify-content:center;*/
+animation:rota 5s infinite;
+}
+@keyframes rota
+{
+0%{left:-360px;}25%{left:20px;}50%{left:360px;}//100%{left:0px;}
+}
+</style>
+</head>
+<body>
+<style type="text/css">
+.topn{
+height:30px;
+width:100%;
+background:rgba(52,110,52,6);
+position:absolute;
+top:0;
+left:0;
+}
+.bt{
+height:40px;
+width:100%;
+background:rgb(52,110,52);
+position:absolute;
+bottom:5px;
+border-radius:0px 0px 25px 25px;
+left:0;
+}
+.hea{
+height:40px;
+width:100%;
+background:rgb(50,100,50);
+position:absolute;
+top:30px;
+left:0;
+line-height:40px;
+text-align:center;
+color:#fff;
+opacity:7;
+
+}.clo{
+position:absolute;
+top:70px;
+left:0px;
+height:77%;
+width:100%;
+}
+</style>
+<div class="topn" ></div>
+<div class="hea" >Bottle Shooter</div>
+<div class="bt" ></div>
+<div class="clo" >
+<div id="game" >
+<div id="gun" ></div>
+<div id="bullet" >Score- <span id="nob" ></span><button  onclick="re()">Restart</button></div>
+<div id="gameland" >
+<div id="target" ></div>
+<div id="gametrans" >
+<div id="b1" ></div>
+<div id="b2" ></div>
+<div id="b3" ></div>
+<div id="b4" ></div>
+<div id="b5" ></div>
+<div id="b6" ></div>
+</div>
+<div id="btbar" ></div>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="Game/collision.js"></script>
+<script type="text/javascript">
+/*
+var txt = "";
+txt += "<p>Total width/height: " + screen.width + "*" + screen.height + "</p>";
+txt += "<p>Available width/height: " + screen.availWidth + "*" + screen.availHeight + "</p>";
+txt += "<p>Color depth: " + screen.colorDepth + "</p>";
+txt += "<p>Color resolution: " + screen.pixelDepth + "</p>";
+*/
+//document.getElementById("vid").play();
+document.getElementById("game").onclick = runn;
+
+var scr=0;
+var bond=0;
+
+var belf=4;
+var b1=$("#b1");
+var b2=$("#b2");
+var b3=$("#b3");
+var b5=$("#b5");
+var b4=$("#b4");
+var b6=$("#b6");
+var bar=$("#btbar");
+
+
+document.getElementById("gameland").onclick =hww;
+//setInterval(function(){document.getElementById("btbar").click();},500);
+function hww(){
+var audg=new Audio;
+
+/*
+$("#b1").css({"margin-top":(b1.offset().top+10)+"px"});
+$("#b2").css({"margin-top":(b2.offset().top+8)+"px"});
+$("#b3").css({"margin-top":(b3.offset().top+15)+"px"});
+$("#b4").css({"margin-top":(b4.offset().top+10)+"px"});
+$("#b5").css({"margin-top":(b5.offset().top+7)+"px"});
+$("#b6").css({"margin-top":(b6.offset().top+14)+"px"});
+*/
+
+if(collision(b1,bar)){$("#b1").css({"display":"none"});audg.src="Game/glass.mp3";document.body.append(audg);audg.play();}
+if(collision(b2,bar)){$("#b2").css({"display":"none"});audg.src="Game/glass.mp3";document.body.append(audg);audg.play();}
+if(collision(b3,bar)){$("#b3").css({"display":"none"});audg.src="Game/glass.mp3";document.body.append(audg);audg.play();}
+if(collision(b4,bar)){$("#b4").css({"display":"none"});audg.src="Game/glass.mp3";document.body.append(audg);audg.play();}
+if(collision(b5,bar)){$("#b5").css({"display":"none"});audg.src="Game/glass.mp3";document.body.append(audg);audg.play();}
+if(collision(b6,bar)){$("#b6").css({"display":"none"});audg.src="Game/glass.mp3";document.body.append(audg);audg.play();}
+}
+
+function runn(){
+/*if(belf>=1){
+belf=belf-1;
+$("#nob").html(belf);*/
+movve(event);
+/*
+}
+else{
+alert("Game Over");}*/
+}
+
+
+function movve(event){
+
+var b1t,b2t,b3t,b1l,b2l,b3l;
+var aud=new Audio;
+var aud2=new Audio;
+var width=(screen.width/2);
+var height=screen.height;
+var tarwid=event.clientX;
+var tarhei=(event.clientY/height)*100;
+var gun=document.getElementById("gun");
+var target=document.getElementById("target");
+var gunn=$("#gun");
+var targetpoint=$("#target");
+
+target.style.left = (event.clientX-30) + 'px';
+target.style.top = (event.clientY-50) + 'px';
+
+
+
+
+
+if(tarhei<"65"){
+aud.src="Game/sound.mp3";
+document.body.append(aud);
+//if((collision(targetpoint,b1)==false) && (collision(targetpoint,b2)==false) && (collision(targetpoint,b3)==false) && (collision(targetpoint,b4)==false) && (collision(targetpoint,b5)==false) && (collision(targetpoint,b6)==false)){
+aud.play();
+
+if(tarwid < width){
+gun.style.transform="rotateY(0deg)";
+gun.style.background="url(Game/weapon-fire1.png)";
+gun.style.backgroundSize="190px";
+gun.style.backgroundRepeat="no-repeat";
+gun.style.bottom="-90px";
+gun.style.left=(width)+"px";
+gun.style.right="0px";
+setTimeout(function(){gun.style.background="url(Game/weapon1.png)";gun.style.backgroundSize="190px";gun.style.backgroundRepeat="no-repeat";gun.style.bottom="-80px";},200);
+}
+else if(tarwid > width){
+gun.style.transform="rotateY(-180deg)";
+gun.style.background="url(Game/weapon-fire1.png)";
+gun.style.backgroundSize="190px";
+gun.style.backgroundRepeat="no-repeat";
+gun.style.bottom="-90px";
+gun.style.left="0px";
+setTimeout(function(){gun.style.background="url(Game/weapon1.png)";gun.style.backgroundSize="190px";gun.style.backgroundRepeat="no-repeat";gun.style.bottom="-80px";},200);
+}}
+
+if(collision(targetpoint,b1)){
+$("#b1").css({"background":"url(Game/gla.png)"});
+$("#b1").css({"background-size":"50px"});
+scr=scr+1;
+setTimeout(function (){
+$("#b1").css({"display":"none"});
+aud2.src="Game/glass.mp3";
+document.body.append(aud2);
+aud2.play();
+bond=bond+1;
+},800);
+}
+
+if(collision(targetpoint,b2)){
+$("#b2").css({"background":"url(Game/gla.png)"});
+$("#b2").css({"background-size":"50px"});
+scr=scr+1;
+setTimeout(function (){
+$("#b2").css({"display":"none"});
+aud2.src="Game/glass.mp3";
+document.body.append(aud2);
+aud2.play();
+bond=bond+1;
+},800);
+}
+
+if(collision(targetpoint,b3)){
+$("#b3").css({"background":"url(Game/gla.png)"});
+$("#b3").css({"background-size":"50px"});
+scr=scr+1;
+setTimeout(function (){
+$("#b3").css({"display":"none"});
+aud2.src="Game/glass.mp3";
+document.body.append(aud2);
+aud2.play();
+bond=bond+1;
+},800);
+}
+
+if(collision(targetpoint,b4)){
+$("#b4").css({"background":"url(Game/gla.png)"});
+$("#b4").css({"background-size":"50px"});
+scr=scr+1;
+setTimeout(function (){
+$("#b4").css({"display":"none"});
+aud2.src="Game/glass.mp3";
+document.body.append(aud2);
+aud2.play();
+bond=bond+1;
+},800);
+}
+
+if(collision(targetpoint,b5)){
+$("#b5").css({"background":"url(Game/gla.png)"});
+$("#b5").css({"background-size":"50px"});
+scr=scr+1;
+setTimeout(function (){
+$("#b5").css({"display":"none"});
+aud2.src="Game/glass.mp3";
+document.body.append(aud2);
+aud2.play();
+bond=bond+1;
+},800);
+}
+
+if(collision(targetpoint,b6)){
+$("#b6").css({"background":"url(Game/gla.png)"});
+$("#b6").css({"background-size":"50px"});
+scr=scr+1;
+setTimeout(function (){
+$("#b6").css({"display":"none"});
+aud2.src="Game/glass.mp3";
+document.body.append(aud2);
+aud2.play();
+bond=bond+1;
+},800);
+}
+
+}
+setInterval(nn,50);
+function nn(){
+if(bond>=6 || scr==0){
+$("#b1").css({"display":"block"});
+$("#b1").css({"background":"url(Game/b3.png)"});
+$("#b1").css({"background-size":"50px"});
+$("#b1").css({"background-position":"-10px -10px"});
+$("#b2").css({"display":"block"});
+$("#b2").css({"background":"url(Game/b3.png)"});
+$("#b2").css({"background-size":"50px"});
+$("#b2").css({"background-position":"-10px -10px"});
+$("#b3").css({"display":"block"});
+$("#b3").css({"background":"url(Game/b3.png)"});
+$("#b3").css({"background-size":"50px"});
+$("#b3").css({"background-position":"-10px -10px"});
+$("#b4").css({"display":"block"});
+$("#b4").css({"background":"url(Game/b3.png)"});
+$("#b4").css({"background-size":"50px"});
+$("#b4").css({"background-position":"-10px -10px"});
+$("#b5").css({"display":"block"});
+$("#b5").css({"background":"url(Game/b3.png)"});
+$("#b5").css({"background-size":"50px"});
+$("#b5").css({"background-position":"-10px -10px"});
+$("#b6").css({"display":"block"});
+$("#b6").css({"background":"url(Game/b3.png)"});
+$("#b6").css({"background-size":"50px"});
+$("#b6").css({"background-position":"-10px -10px"});
+bond=0;
+}
+$("#nob").html(scr);
+}
+
+
+function re(){
+scr=0;
+nn();
+}
+</script>
+
+</body>
+</html>

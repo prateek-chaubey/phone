@@ -1,0 +1,178 @@
+<!--
+
+MADE BY PRATEEK CHAUBEY © 2018-present
+v0.1
+https://github.com/magic-pc
+Licence- Apache Licence
+https://h4c-k3r.github.io/
+--><!DOCTYPE html>
+<html>
+<head>
+<style>img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] { display: none; }</style>
+<title>Clock</title>
+<style type="text/css">
+.clo{
+background:rgb(30,100,30);
+}
+#clock{
+position:absolute;
+height:150px;
+width:150px;
+border-radius:50%;
+top:80px;
+left:30px;
+margin-left:40px;
+border:3px solid white;
+}
+#time{
+position:relative;
+top:320px;
+font-size:25px;font-weight:bold;
+color:amber;
+text-align:center;
+}
+#hourHand{
+background:#000;
+width:5px;
+height:30px;
+position:absolute;
+top:45px;
+left:72px;
+transform-origin:bottom center;
+border-radius:5px;
+animation:vb 10s infinite;
+
+}
+#minuteHand,#secondHand{
+background:rgb(50, 100, 168);
+width:3px;
+height:70px;
+position:absolute;
+top:5px;
+left:73px;
+border-radius:5px;
+transform-origin:bottom center;
+animation:vb 9s infinite;
+}
+#secondHand{
+background:rgb(168, 50, 50);
+}
+#secondHand::bfore{
+content:'';
+border-radius:50px;
+background:#677880;
+width:18px;
+height:18px;
+position:absolute;
+bottom:-10%;
+left:-80%;
+transform-origin:bottom  center;
+}
+@keyframes v{
+0%{transform:rotate(360deg);}
+}
+
+</style>
+</head>
+<body>
+<style type="text/css">
+.topn{
+height:30px;
+width:100%;
+background:rgba(52,110,52,6);
+position:absolute;
+top:0;
+left:0;
+}
+.bt{
+height:40px;
+width:100%;
+background:rgb(52,110,52);
+position:absolute;
+bottom:5px;
+border-radius:0px 0px 25px 25px;
+left:0;
+}
+.hea{
+height:40px;
+width:100%;
+background:rgb(50,100,50);
+position:absolute;
+top:30px;
+left:0;
+line-height:40px;
+text-align:center;
+color:#fff;
+opacity:7;
+
+}.clo{
+position:absolute;
+top:70px;
+left:0px;
+height:77%;
+width:100%;
+}
+</style>
+<div class="topn" ></div>
+<div class="hea" >Clock</div>
+<div class="bt" ></div>
+<div class="clo" >
+<div id="clock" >
+<div id="minuteHand" ></div>
+<div id="hourHand" ></div>
+<div id="secondHand" ></div>
+
+</div></div>
+</body>
+</html>
+      <div id="time" ></div>
+    <script type="text/javascript">
+    setInterval(function(){
+    var time= new Date();
+    var hrs = time.getHours();
+    var min = time.getMinutes();
+     var sec = time.getSeconds();
+    var en = 'AM';
+    if(hrs>12){
+    en='PM';
+    }
+    if(hrs>12){
+    hrs=hrs-12;
+    }
+    if(hrs<10){
+    hrs='0'+hrs;
+    }
+    if(min<10){
+    min='0'+min;
+    }
+    if(sec<10){
+    sec='0'+sec;
+    }
+    
+    document.getElementById("time").innerHTML=hrs +':'+min+':'+sec+' '+en;
+    },50);
+    var hourHand = document.getElementById('hourHand');
+    var minuteHand = document.getElementById('minuteHand');
+    var secondHand = document.getElementById('secondHand');
+    
+    function initClock() {
+    var date = new Date();
+    var hour = date.getHours() % 12; // 0 - 23
+    var minute = date.getMinutes();
+    var second = date.getSeconds();
+    
+    var hourDeg = (hour * 30 +   minute * 0.5); // every hour, 30 deg. 30 / 60
+    var minuteDeg = (minute * 6) ; // every minute, 6 deg. 6 / 60
+    var secondDeg = second * 6; // 360 / 60
+    
+    hourHand.style.transform = 'rotate(' + hourDeg + 'deg)';
+    minuteHand.style.transform = 'rotate(' + minuteDeg + 'deg)';
+    secondHand.style.transform = 'rotate(' + secondDeg + 'deg)';
+    
+    setTimeout(initClock, 1000);
+    };
+    
+    initClock();
+    </script>
+</body>
+</html>

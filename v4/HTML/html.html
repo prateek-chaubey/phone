@@ -1,0 +1,349 @@
+<!--
+
+MADE BY PRATEEK CHAUBEY © 2018-present
+v0.1
+https://github.com/magic-pc
+https://h4c-k3r.github.io/
+--><!DOCTYPE html>
+<html>
+<style>img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] { display: none; }</style>
+<link rel="icon" href="http://lh4.googleusercontent.com/-TGiQcY5dIGE/AAAAAAAAAAI/AAAAAAAAABU/0_rYc2TmuNM/s120-c-pf/photo.jpg" >
+<meta name="og:title" content="This is HTML APP CREATED BY PRATEEK CAHUBEY" >  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 
+<head>
+<title>Writer</title>
+<style type="text/css">
+*{
+outline:none;
+}
+.main{
+position:absolute;
+left:0;
+overflow:scroll;
+height:100px;
+top:70px;
+}
+input[type="button"]:hover{
+outline:none;
+}
+input[type="button"]{
+color:white;
+border:0;
+transition:.3s;
+width:80px;
+height:50px;
+background:#d81b60;
+margin-right:0px;
+
+}
+textarea {
+border:0;
+border-top:5px solid #d81b60;
+width: 100%;
+height:305px;
+min-height: 100px;
+position:fixed;
+}
+iframe {
+border:0;
+position:fixed;
+background:#fff;
+border-top:5px solid green;
+width:100%;
+height:310px;
+display:none;
+}
+#tags{
+animation:tags .5s;
+}
+#tags,#splash,#open{
+position:fixed;
+top:70px;
+width:100%;
+height:365px;
+background:rgba(70,70,70,.7);
+display:none;
+}
+#splash{
+display:block;
+background:#001;
+}
+@keyframes tags{
+from{
+transform:scale(0);
+}
+to{
+transform:scale(1);
+}
+}
+@keyframes splash{
+from{
+transform:scale(1);
+}
+to{
+transform:scale(0);
+}
+}
+#splash .c{
+color:white;
+font-size:40px;
+font-family:cursive;
+text-align:center;
+margin-top:70px;
+}
+#splash .v{
+color:white;
+font-size:20px;
+font-family:cursive;
+text-align:center;
+margin-top:40px;
+}
+#myProgress {
+  position: relative;
+  width: 80%;
+  height: 30px;
+  border-radius:8px;
+  margin:auto;
+  background-color: white;
+}
+
+#myBar {
+-webkit-background-size: 40px 40px;
+        background-size: 40px 40px;
+  border-radius:8px;
+  position: absolute;
+  height: 100%;
+  background-color:#f80;}
+  #myProgress #myBar {
+background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+
+}
+.name{
+color:white;
+text-align:center;
+}
+.load{
+font-size:60px;
+//animation:load 1s ease-in-out infinite;
+animation:load 1s  infinite;
+//animation:load 1s linear infinite;
+//color:red;
+transform:scale(1.5);
+}
+.load:nth-child(1)
+{
+animation-direction:alternate;
+animation-delay:.5s;
+} 
+.load:nth-child(3)
+{
+animation-direction:alternate;
+animation-delay:1.5s;
+} 
+.load:nth-child(2)
+{
+animation-delay:1s;
+animation-direction:alternate;
+} 
+@keyframes load{
+//0%{opacity:0;}
+100%{
+opacity:0;
+transform:scale(1);
+}
+}
+.tag{
+background:green;
+border-radius:5px;
+text-align:center;
+font-size:15px;
+color:#fff;
+width:80px;
+line-height:40px;
+height:40px;
+margin:1px;
+
+}
+.taged {
+display:flex;
+}
+.x{
+position:fixed;
+top:2px;
+right:2px;
+color:red;
+font-weight:bolder;
+width:50px;
+border-radius:10px;
+height:50px;
+text-align:center;
+line-height:50px;
+background:black;
+}
+#toast{
+background:rgba(70,70,70,.7);
+color:red;
+text-align:center;
+line-height:50px;
+border-radius:10px;
+width:200px;
+height:50px;
+position:fixed;
+animation:toast 3s;
+display:none;
+bottom:20px;
+left:50px;
+}
+@keyframes toast{
+from{
+bottom:60px;
+}
+to{
+bottom:70px;
+opacity:0;
+}
+}
+</style>
+<script type="text/javascript">
+function update()
+{
+document.getElementById("display").style.display="block";
+ document.getElementById("mycode").style.display="none";
+ var content = document.getElementById('mycode').value;
+ var iframe = document.getElementById('display');
+ iframe = (iframe.contentWindow) ? iframe.contentWindow : (iframe.contentDocument.document) ? iframe.contentDocument.document : iframe.contentDocument;
+ iframe.document.open();
+ iframe.document.write(content);
+ iframe.document.close();
+ return false;
+}
+function edito(){
+document.getElementById("display").style.display="none";
+ document.getElementById("mycode").style.display="block";
+
+}
+function htm() {
+document.getElementById('mycode').value="";
+document.getElementById("toast").style.display="block";
+setInterval(function(){
+document.getElementById("toast").style.display="none";
+},3000);
+}
+function tg(){
+document.getElementById("tags").style.display="block";
+}
+</script>
+<style type="text/css">
+.topn{
+height:30px;
+width:100%;
+background:rgb(173,25,80);
+position:absolute;
+top:0;
+left:0;
+}
+.bt{
+height:40px;
+width:100%;
+background:rgb(173,25,80);
+position:absolute;
+bottom:5px;
+border-radius:0px 0px 25px 25px;
+left:0;
+}
+.hea{
+height:40px;
+width:100%;
+background:rgb(184,00,67);
+position:absolute;
+top:30px;
+left:0;
+line-height:40px;
+text-align:center;
+color:#fff;
+box-shadow:0px 0px 3px solid black;
+}.clo{
+position:absolute;
+top:70px;
+left:0px;
+height:77%;
+width:100%;
+}
+</style>
+<div class="topn" ></div>
+<div class="hea" >HTML EDITER</div>
+<div class="bt" ></div>
+ <div class="main" style="padding:0; margin:0;">
+<div id="co" style="padding:0; margin:0;" >
+<div   style="display:flex;width:294px;overflow:scroll" >
+<input id="edit"  onclick="edito();" type="button" value="Editor" />
+<input id="optu"  onclick="update();" style="background:green" type="button" value="Output" />
+<input onclick="htm();" style="background:#f80" type="button" value="Clear All" />
+<input onclick="tg();" style="background:#f80" type="button" value="Tags" />
+</div>
+<textarea id="mycode" placeholder="Type Your Code Here" ><!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<h1>This is heading</h1>
+</body>
+</html></textarea>
+<iframe id="display"  ></iframe>
+
+<div id="tags" >
+
+<div class="taged" >
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<a >'+'<'+'/'+'a>';">&lt;a&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<b>'+'<'+'/'+'b>';">&lt;b&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<i>'+'<'+'/'+'i>';">&lt;i&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<u>'+'<'+'/'+'u>';">&lt;u&gt;</div>
+<div class="tag" style="color:red;background:black"  onclick="document.getElementById('tags').style.display='none';">X</div>
+</div>
+<div class="taged"  >
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<div>'+'<'+'/'+'div>';">&lt;div&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<range>'+'<'+'/'+'range>';">&lt;range&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<input'+'/'+'>';">&lt;input&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<code>'+'<'+'/'+'code>';">&lt;code&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<button>'+'<'+'/'+'button>';">&lt;button&gt;</div></div>
+<div class="taged" >
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<progress>'+'<'+'/'+'progress>';">&lt;progress&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<audio>'+'<'+'/'+'audio>';">&lt;audio&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<video>'+'<'+'/'+'video>';">&lt;video&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<site>'+'<'+'/'+'site>';">&lt;site&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<script>'+'<'+'/'+'script>';">&lt;script&gt;</div></div>
+<div class="taged" >
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<style>'+'<'+'/'+'style>';">&lt;style&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<abbr>'+'<'+'/'+'abbr>';">&lt;abbr&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<bdi>'+'<'+'/'+'bdi>';">&lt;bdi&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<bdo>'+'<'+'/'+'bdo>';">&lt;bdo&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<ol>'+'<'+'/'+'ol>';">&lt;ol&gt;</div></div>
+<div class="taged" >
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<ul>'+'<'+'/'+'ul>';">&lt;ul&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<li>'+'<'+'/'+'li>';">&lt;li&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<br>';">&lt;br&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<canvas>'+'<'+'/'+'canvas>';">&lt;canvas&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<form>'+'<'+'/'+'form>';">&lt;form&gt;</div></div>
+<div class="taged" >
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<h1>'+'<'+'/'+'h1>';">&lt;h1&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<h2>'+'<'+'/'+'h2>';">&lt;h2&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<h3>'+'<'+'/'+'h3>';">&lt;h3&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<h4>'+'<'+'/'+'h4>';">&lt;h4&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<h5>'+'<'+'/'+'h5>';">&lt;h5&gt;</div>
+</div>
+<div class="taged" >
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<h6>'+'<'+'/'+'h6>';">&lt;h6&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<img>';">&lt;img&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<iframe>'+'<'+'/'+'iframe>';">&lt;iframe&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<ins>'+'<'+'/'+'ins>';">&lt;ins&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<hr>'+'<'+'/'+'hr>';">&lt;hr&gt;</div></div>
+<div class="taged" >
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<strong>'+'<'+'/'+'strong>';">&lt;strong&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<meter>'+'<'+'/'+'meter>';">&lt;meter&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<pre>'+'<'+'/'+'pre>';">&lt;pre&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<sub>'+'<'+'/'+'sub>';">&lt;sub&gt;</div>
+<div class="tag" onclick="document.getElementById('mycode').value=document.getElementById('mycode').value+'<sup>'+'<'+'/'+'sup>';">&lt;sup&gt;</div></div>
+
+</div></div>
+<div id="toast" >Cleared</div>

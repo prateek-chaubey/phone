@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] { display: none; }</style>
+<title></title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css">
+</head>
+<body>
+<style type="text/css">
+*{
+font-family:lato;
+outline:0;
+}
+.topn{
+height:30px;
+width:100%;
+background:rgb(52,52,110);
+position:absolute;
+top:0;
+left:0;
+}
+.bt{
+height:40px;
+width:100%;
+background:rgb(52,52,110);
+position:absolute;
+bottom:5px;
+border-radius:0px 0px 25px 25px;
+left:0;
+}
+.hea{
+height:40px;
+width:100%;
+background:rgb(40,40,90);
+position:absolute;
+top:30px;
+left:0;
+line-height:40px;
+text-align:center;
+color:#fff;
+opacity:7;
+
+}.clo{
+position:absolute;
+top:70px;
+left:0px;
+height:77%;
+background:white;
+width:100%;
+}
+button{
+position:relative;
+}
+button sub{
+position:absolute;
+bottom:0px;
+left:40px;
+font-weight:lighter;
+color:#888;
+font-size:12px;
+}
+</style>
+<div class="topn" ></div>
+<div class="hea" >Phone</div>
+<div class="bt" ></div>
+<div class="clo" >
+<div id="phone" >
+<br>
+<input type="text" id="ph" readonly="readonly" ><i type="button" class="fas fa-backspace"   style="color:grey; font-size:20px;"   onclick="var you = document.getElementById('ph').value.substring(0,document.getElementById('ph').value.length-1);document.getElementById('ph').value = you;"></i><br>
+<button style="border-top:1px solid silver;"  onclick="document.getElementById('ph').value += 1;">1<sub>ABC</sub></button><button style="border-top:1px solid silver;" onclick="document.getElementById('ph').value += 2;">2<sub>ABC</sub></button><button style="border-top:1px solid silver;"  onclick="document.getElementById('ph').value += 3;">3<sub>DEF</sub></button><br>
+<button  onclick="document.getElementById('ph').value += 4;">4<sub>GHI</sub></button><button onclick="document.getElementById('ph').value += 5;" >5<sub>JKL</sub></button><button  onclick="document.getElementById('ph').value += 6;">6<sub>MNO</sub></button><br>
+<button  onclick="document.getElementById('ph').value += 7;">7<sub>PQRS</sub></button><button  onclick="document.getElementById('ph').value += 8;">8<sub>TUV</sub></button><button  onclick="document.getElementById('ph').value += 9;">9<sub style="left:35px" >WXYZ</sub></button><br>
+<button  onclick="document.getElementById('ph').value += '*';" style="color:#888" >*</button><button  onclick="document.getElementById('ph').value += 0;">0</button><button style="color:#888"  onclick="document.getElementById('ph').value += '#';">#</button><br>
+<button id="coll" onclick="window.location.href=('tel:'+document.getElementById('ph').value);" style="background:rgb(0,205,0);border-radius:50%; height:50px;width:50px;margin:3px;color:white;" ><i class="zmdi zmdi-phone" ></i></button>
+</div>
+<style type="text/css">
+#phone{
+width:100%;
+height:100%;
+background:#eee;
+text-align:center;
+
+
+}
+a{
+color:#fff;
+}
+#phone button{
+background:#eee;
+color:rgb(70,70,225);
+width:33.3333%;
+height:13.33333%;
+font-weight:bold;
+border:0;
+}
+#ph{
+background:transparent;
+width:80%;
+font-weight:bold;
+color:black;
+text-align:center;
+font-size:30px;
+border:0;
+height:70px;
+}
+#phone button{
+font-size:20px;
+outline:none;
+}
+</style>
+</div>
+</body>
+</html>
