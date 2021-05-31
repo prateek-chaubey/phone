@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart Phone v4</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"> 
+<link rel="stylesheet" href="css/animate.css" >
+<script type="text/javascript" src="jquery.js"></script>
+<style>img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] { display: none; }</style>
+</head>
+<body>
+<style type="text/css">
+*{
+padding:0;
+margin:0;
+font-family:lato;
+outline:0;
+font-family:lato;
+}
+#cover{
+height:500px;
+width:300px;
+position:relative;
+margin:auto;
+top:10px;
+border-radius:25px;
+background:#000;
+}
+#innercov{
+height:95%;
+width:98%;
+margin:auto;
+position:relative;
+background:url(img/bk.png);
+background-size:cover;
+background-repeat:no-repeat;
+top:8px;
+transition:1s;
+background-position:0px 0px ;
+border-radius:25px;
+}
+#cam{
+position:relative;
+padding:3px;
+z-index:99999;
+background:#000;
+height:13px;
+width:13px;
+border-radius:50%;
+}
+.camc{
+top:-0.5px;
+left:-0.5px;
+border:1px solid #111;
+height:12px;
+width:12px;
+position:relative;
+border-radius:50%;
+}
+.lens{
+height:7px;
+width:7px;
+position:relative;
+top:2.5px;
+margin:auto;
+background:radial-gradient(circle,#000 01%,#007,#099  );
+border-radius:50%;
+}
+.glass {
+height:3px;
+width:3px;
+position:relative;
+top:2px;
+left:1px;
+border-left:1px solid rgba(255,255,255,.5);
+border-radius:50%;
+transform:rotate(45deg);
+}
+
+.headphone{
+position:absolute;
+left:135px;
+height:3px;
+border-radius:0px 0px 12px 12px;
+width:40px;
+background-image:linear-gradient(45deg, #222 ,#000 ,#222 ,#000, #222 ,#000, #222 ,#000 ,#222 ,#000, #222 ,#000, #222 ,#000 ,#222 ,#000, #222 ,#000, #222 ,#000 ,#222 ,#000, #222 ,#000);
+border:1px solid #222;
+border-top:1px solid transparent;
+}
+#powerbtn{
+height:50px;
+width:10px;
+position:absolute;
+right:-2px;
+top:80px;
+background:black;
+border-radius:0px 3px 3px 0px;
+}
+.volbtn{
+height:100px;
+width:10px;
+position:absolute;
+left:-2px;
+top:60px;
+background:black;
+border-radius:3px 0px 0px 3px;
+}
+#nav{
+height:30px;
+position:absolute;
+top:0px;
+border-radius:25px;
+width:100%;
+line-height:30px;
+left:0px;
+color:#fff;
+z-index:99999;
+}
+#time{
+margin-left:15px;
+font-size:12px;
+}
+#battery{
+width:25px;
+height:8px;
+position:absolute;
+right:65px;
+top:10px;
+transform:rotate(180deg);
+border:1px solid #fff;
+border-radius:10px;
+}
+#batprog{
+border-radius:0px 20px 20px 0px;
+height:100%;
+font-size:10px;
+text-align:center;
+line-height:10px;
+transform:rotate(180deg);
+position:absolute;
+background:rgba(255,255,255,.7);
+width:0px;
+}
+.camera{
+display:flex;
+position:absolute;
+top:5px;
+background:#000;
+z-index:99999;
+right:12px;
+line-height:26px;
+height:19px;
+box-shadow:0px 0px 3px  black;
+border-radius:30px;
+}
+
+
+#slider{
+position:relative;
+height:100%;
+width:100%;
+color:white;
+overflow:hidden;
+border-radius:25px;
+position:absolute;
+}
+.hd{
+position:absolute;
+height:100%;
+width:100%;
+display:inline;
+text-align:center;
+
+}
+
+#wea{
+position:absolute;
+top:105px;
+
+height:200px;
+width:200px;
+left:20px;
+}
+#weaimg{
+height:70px;
+width:70px;
+position:absolute;
+left:-15px;
+top:5px;
+
+display:block;
+}
+#temp{
+font-size:25px;
+position:absolute;
+top:30px;
+left:50px;
+
+font-weight:lighter;
+}
+#loa{
+position:absolute;
+top:60px;
+left:5px;
+}
+#btns{
+height:30px;
+position:absolute;
+bottom:0px;
+z-index:9999999;
+width:100%;
+}
+.back{
+height:100%;
+position:absolute;
+left:40px;
+
+width:50px;
+}
+.back i{
+font-size:20px;
+color:#fff;
+position:absolute;
+top:3px;
+left:15px;
+}
+.home{
+height:100%;
+position:absolute;
+left:120px;
+width:50px;
+}
+.h1{
+height:10px;
+width:10px;
+top:6px;
+left:20px;
+border:2px solid #fff;
+position:absolute;
+border-radius:50%;
+}
+.recent{
+height:100%;
+position:absolute;
+right:40px;
+width:50px;
+}
+.recent i{
+transform:rotate(90deg);
+font-size:15px;
+color:#fff;
+position:absolute;
+top:5px;
+left:15px;
+}
+#keyboard{
+position:absolute;
+bottom:30px;
+left:0px;
+height:200px;
+background:rgba(255,255,255,.7);
+box-shadow:0px 0px 3px black;
+width:100%;
+}
+#clock{
+position:absolute;
+top:135px ;
+font-weight:lighter;
+right:20px;
+font-size:25px;
+}
+#day{
+position:absolute;
+right:0px;
+font-size:15px;
+}
+.fa-bolt{
+font-size:0px;
+}
+.serc{
+top:190px;
+height:30px;
+width:100%;
+position:absolute;
+}
+#goo{
+height:30px;
+width:85%;
+background:url("s8/goo.png");
+background-size:cover;
+background-repeat:no-repeat;
+background-position:0px -2px;
+padding-left:70px;
+padding-right:30px;
+border:0;
+border-radius:20px;
+}
+.apps{
+display:flex;
+width:100%;
+position:absolute;
+bottom:40px;
+height:70px;
+}
+.app,.appb{
+height:50px;
+width:50px;
+background:url(s8/camera.png);
+background-size:cover;
+margin-left:20px;
+background-repeat:no-repeat;
+}
+.appb{
+background:#a33;
+border-radius:15px;
+position:relative;
+}
+.appc{
+height:35px;
+width:35px;
+position:absolute;
+top:7px;
+left:8px;
+background:url(s8/app13.png);
+background-size:cover;
+background-repeat:no-repeat;
+}
+.wnew{
+position:absolute;
+top:40px;
+left:8px;
+height:65%;
+width:95%;
+text-align:left;
+border-radius:5px;
+background:rgba(255,255,255,.7);
+padding-left:20px;
+}
+.wnew h3{
+color:black;
+}
+#appsview{
+height:480px;
+width:100%;
+
+z-index:9999;
+border-radius:25px;
+position:absolute;
+}
+#appsview iframe{
+height:100%;
+width:100%;
+//background:rgb(85,160,82);
+border:0;
+border-radius:25px;
+}
+#develop{
+height:100%;
+width:100%;
+position:absolute;
+border-radius:25px;
+background:red;
+z-index:9999;
+display:none;
+}
+</style>
+
+<div id="cover" >
+
+<div class="headphone" ></div>
+<div id="powerbtn" ></div>
+<div class="volbtn" ></div>
+
+<div id="innercov" >
+
+<!--camera-->
+<div class="camera" >
+<div id="cam" >
+<div class="camc" ><div class="lens"><div class="glass"></div></div></div>
+</div>
+<div id="cam" >
+<div class="camc" ><div class="lens"><div class="glass"></div></div></div>
+</div>
+</div>
+<!--end camera-->
+
+<!--navigation-->
+<div id="nav" >
+<div id="time" >01:01 AM</div>
+<div id="battery" ><div id="batprog" ></div></div>
+</div>
+<!--end navigation-->
+
+
+<div class="apps" style="z-index:999" >
+<div onclick="opa('call')" style="background:url(s8/phone.png);background-size:cover;"  class="app" ></div>
+<div onclick="aud('SMS')" style="background:url(s8/sms.png);background-size:cover;" class="app" ></div>
+<div onclick="aud('Contacts')" style="background:url(s8/contacts.png);background-size:cover;" class="app" ></div>
+<div onclick="opa('whatsapp')" style="background:url(s8/whatsapp.png);background-size:cover;" class="app" ></div>
+</div>
+<!--app slider-->
+<div id="slider" >
+
+<div class="hd" >
+<div id="clock" >05:06 AM<div id="day" >13 Mar, Wed</div></div>
+<div id="wea" ><img id="weaimg"  src="s8/full_clouds.svg" />
+<div id="loa" ><i class="fas fa-map-marker-alt" ></i> Lucknow</div><div id="temp" >45°C</div></div>
+<div class="serc" ><input id="goo" type="search"  autocomplete="off" spellcheck="false"  /></div>
+
+<!--
+document.getElementById('foo').onkeypress = function(e){
+    if (!e) e = window.event;
+    if (e.keyCode == '13'){
+      alert(this.value);
+      return false;
+    }
+  }
+<script async src="https://cse.google.com/cse.js?cx=007933422590785987133:swibofnsxwd"></script>-->
+<div class="apps" style="bottom:140px" >
+<div onclick="opa('gall')" style="background:url(s8/gallery.png);background-size:cover;"  class="app" ></div>
+<div onclick="opa('camera')" style="background:url(s8/camera.png);background-size:cover;" class="app" ></div>
+<div onclick="aud('Play Store')" style="background:url(s8/googleplaystore.png);background-size:cover;" class="app" ></div>
+<div onclick="opa('bing')" style="background:url(s8/browser.png);background-size:cover;" class="app" ></div>
+</div>
+
+
+</div>
+
+<div class="hd" >
+<div class="apps" style="top:40px" >
+<div onclick="opa('calc')" style="background:url(s8/calculator.png);background-size:cover;"  class="app" ></div>
+<div onclick="aud('Callender')" style="background:url(s8/calendar.png);background-size:cover;" class="app" ></div>
+<div onclick="opa('clock')" style="background:url(s8/clock.png);background-size:cover;" class="app" ></div>
+<div onclick="aud('Email')" style="background:url(s8/email.png);background-size:cover;" class="app" ></div>
+</div>
+
+<div class="apps" style="top:110px" >
+<div onclick="aud('Settings')" style="background:url(s8/settings.png);background-size:cover;"  class="app" ></div>
+<div onclick="opa('google')" style="background:url(s8/googlesearch.png);background-size:cover;" class="app" ></div>
+<div onclick="aud('NetFlix')" style="background:url(s8/net.png);border-radius:8px;background-size:cover;" class="app" ></div>
+<div onclick="aud('Hotstar')" style="background:url(s8/hot.png);border-radius:8px;background-size:cover;" class="app" ></div>
+</div>
+
+<div class="apps"  style="top:190px" >
+<div onclick="aud('Downloads')" style="background:url(s8/downloads.png);background-size:cover;"  class="app" ></div>
+<div onclick="aud('File Manager')" style="background:url(s8/filemanager.png);background-size:cover;" class="app" ></div>
+<div onclick="aud('Video')" style="background:url(s8/video.png);background-size:cover;" class="app" ></div>
+<div onclick="aud('Flash Light')" style="background:url(s8/flashlight.png);background-size:cover;" class="app" ></div>
+</div>
+
+
+<div class="apps" style="bottom:140px" >
+<div onclick="aud('Facebook')" style="background:url(s8/ze.png);background-size:cover;"  class="app" ></div>
+<div onclick="aud('HOOQ')" style="background:url(s8/hooq.png);background-size:cover;" class="app" ></div>
+<div onclick="aud('Yandex')" style="background:url(s8/yan.png);background-size:cover;" class="app" ></div>
+<div onclick="aud('Gmail')" style="background:url(s8/email.png);background-size:cover;" class="app" ></div>
+</div>
+
+
+</div>
+<div class="hd" >
+
+
+<div class="apps" style="top:40px" >
+<div onclick="aud('Youtube')" style="background:#911;"  class="appb" ><div class="appc" ></div></div>
+<div onclick="opa('html')" style="background:#888"  class="appb" ><div class="appc" style="background:url(s8/app1.png);background-size:cover;"></div></div>
+<div onclick="aud('Google Drive')" style="background:#33a"  class="appb" ><div class="appc" style="background:url(s8/app2.png);background-size:cover;"></div></div>
+<div onclick="opa('google')" style="background:#393"  class="appb" ><div class="appc" style="background:url(s8/app03.png);background-size:cover;"></div></div>
+</div>
+
+<div class="apps" style="top:110px" >
+
+<div onclick="aud('Translate')" style="background:#338"  class="appb" ><div class="appc" style="background:url(s8/trans.png);background-size:cover;"></div></div>
+<div onclick="opa('proxy')" style="background:rgb(0,160,200)"  class="appb" ><div class="appc" style="background:url(s8/vpn.png);background-size:cover;"></div></div>
+<div onclick="aud('Tiktok')" style="background:url(s8/tik.png);background-size:cover;"  class="app" ></div>
+<div onclick="opa('index')" style="background:url(s8/gme.png);background-size:cover;" class="app" ></div>
+
+</div>
+
+<div class="apps"  style="top:190px" >
+<div onclick="aud('Amazon Prime')" style="background:url(s8/pv.png);background-size:cover;"  class="app" ></div>
+<div onclick="aud('Instagram')" style="background:url(s8/ins.png);background-size:cover;" class="app" ></div>
+<div onclick="aud('Maps')" style="background:url(s8/map.png);background-size:cover;" class="app" ></div>
+<div onclick="aud('SketchWare')" style="background:url(s8/ske.png);background-size:cover;" class="app" ></div>
+</div>
+
+
+</div>
+
+
+
+</div>
+<!--end slider-->
+
+<!--develop-->
+
+<div id="develop" >
+
+<style type="text/css">
+.topn{
+height:30px;
+width:100%;
+background:rgb(15, 135, 153);
+position:absolute;
+top:0;
+left:0;
+}
+.bt{
+height:40px;
+width:100%;
+background:rgb(15, 135, 153);
+position:absolute;
+bottom:0px;
+border-radius:0px 0px 25px 25px;
+left:0;
+}
+.hea{
+height:40px;
+width:100%;
+background:rgb(24, 193, 219);
+position:absolute;
+top:30px;
+left:0;
+line-height:40px;
+text-align:center;
+color:#fff;
+opacity:7;
+
+}.clo{
+position:absolute;
+top:70px;
+left:0px;
+color:#fff;
+height:77%;
+background:rgb(15, 113, 128);
+width:100%;
+}
+#develop {
+overflow:hidden;
+}
+#appsview{
+display:none;
+}
+</style>
+<div class="topn" ></div>
+<div class="hea" id="hea"  >{App Name}</div>
+<div class="bt" ></div>
+<div class="clo" >
+<br><br><br>
+<center><h3>App Under Development</h3></center>
+
+</div>
+
+</div>
+
+
+<!--end develop-->
+
+
+<!--navigation btns-->
+<div id="btns" >
+<div class="back" onclick="bac()" ><i class="fas fa-angle-left" ></i></div>
+<div class="home" onclick="bac()" ><div class="h1" ></div></div>
+<div class="recent" > <i class="fas fa-bars" ></i></div>
+</div>
+
+<!--end navigation btns-->
+
+<!--app show-->
+
+
+<div id="appsview" >
+<iframe src="" id="ifr"  >App Is Loading..</iframe>
+</div>
+
+<!--end app show-->
+
+<!----<div id="keyboard" >
+//  I WILL ADD THIS IN V5  503
+</div><!---->
+</div>
+</div>
+<script type="text/javascript">
+
+setInterval(function(){
+var time= new Date();
+var hrs = time.getHours();
+var min = time.getMinutes();
+var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+var mont=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+var month=mont[time.getMonth()];
+var date = time.getDate();
+var day = days[time.getDay()];
+var en = 'AM';
+if(hrs>12){
+en='PM';
+}
+if(hrs>12){
+hrs=hrs-12;
+}
+if(hrs<10){
+hrs='0'+hrs;
+}
+if(date<10){
+date='0'+date;
+}
+if(min<10){
+min='0'+min;
+}
+document.getElementById("time").innerHTML=hrs +':'+min+' '+en;
+document.getElementById("clock").innerHTML=hrs +':'+min+' '+en+"<div id='day'></div>";
+document.getElementById("day").innerHTML=date+" "+month+", "+day;
+//document.getElementById("calendayy").innerHTML=date;
+//document.getElementById("cltime").innerHTML=hrs +':'+min;
+},50);
+///////////////////////
+var Geolocation;
+
+
+$.getJSON("http://ip-api.com/json/", 
+function(data) { 
+Geolocation=data.city;
+$.get("http://api.weatherstack.com/current?access_key=73bb1f8356b8a857892489c79612359b&query="+Geolocation, 
+function(data) { 
+var weadis=data.current.weather_descriptions;
+var weaimg=data.current.weather_icons[0];
+document.getElementById("loa").innerHTML='<i class="fas fa-map-marker-alt" ></i> '+Geolocation;
+document.getElementById("temp").innerHTML=data.current.temperature+"°C";
+}); 
+}); 
+
+
+
+////////////////////////
+
+////////////////////////
+var battery_level; 
+navigator.getBattery().then(function(battery) { 
+ function updateAllBatteryInfo(){ 
+ battery_level=(battery.level*100)|0; 
+ updateLevelInfo(); 
+ } 
+ updateAllBatteryInfo(); 
+ battery.addEventListener('levelchange', 
+ function(){ 
+ updateLevelInfo(); 
+ }); 
+battery.addEventListener('chargingchange', 
+function(){ 
+updateCharge(); 
+}); 
+updateCharge(); 
+function updateCharge(){  
+if(battery.charging==true){
+document.getElementById("batprog").style.background="rgba(0,255,0,.7)";
+document.getElementById("batprog").innerHTML="<"+'i class="fa fa-bolt"'+"><"+"/"+"i>";
+}
+else if(battery.charging==false){
+document.getElementById("batprog").innerHTML="";
+document.getElementById("batprog").style.background="rgba(255,255,255,.7)";
+}
+}
+ function updateLevelInfo(){  
+ setText(battery_level); 
+  } 
+  }); 
+ function setText(msg){
+document.getElementById("batprog").style.width=msg+"%";
+//document.getElementById("batprog").innerHTML=msg+"%";
+ };
+
+/////////////////////////////
+
+
+
+
+
+/// bing proxy gall 
+
+
+
+
+function aud(xy){
+document.getElementById("develop").style.display="block";
+document.getElementById("hea").innerHTML=xy;
+}
+function opa(xyz){
+if(xyz.indexOf("bing") > -1){
+document.getElementById("ifr").src="https://bing.com";
+}
+else if(xyz.indexOf("gall") > -1){
+document.getElementById("ifr").src="HTML/camera.html?x=gall";
+}
+else if(xyz.indexOf("proxy") > -1){
+document.getElementById("ifr").src="https://pkcinc.gq/proxy/";
+}
+else{
+document.getElementById("appsview").style.display="block";
+document.getElementById("ifr").src="HTML/"+xyz+".html";
+}
+document.getElementById("appsview").style.display="block";
+}
+function bac(){
+document.getElementById("appsview").style.display="none";
+document.getElementById("develop").style.display="none";
+document.getElementById("ifr").src="";
+}
+
+///////////////////
+
+//////////////app slider
+var s,l,r;
+s=0;
+r=0;
+//var tyin=document.getElementById("hs");
+var sli=document.getElementById("slider");
+var divs=sli.childElementCount;
+var cd= document.getElementsByClassName("hd");
+var t=divs+1;
+var xt=divs+1;
+l=divs;
+var yu=0;
+var ti=0;
+for(var yu=0;yu<divs;yu++){
+var d=t;
+ti++;
+t--;
+var iu=t-1;
+//alert(d+" "+iu);
+cd[iu].style.zIndex=ti;
+//sli.style.zIndex=-(t+2);
+}
+t=divs+1;
+for(var yu=1;yu<divs;yu++){
+t--;
+var iu=t-1;
+cd[iu].style.display="none";
+}
+
+var c,le,dy;
+sli.setAttribute("ontouchstart","f(event)");
+sli.setAttribute("ontouchmove","fu(event)");
+sli.setAttribute("ontouchend","fuey(event)");
+function f(event){
+c = event.touches[s].clientX; 
+
+}
+
+
+function fu(event){
+dy=cd[s+r].offsetWidth/2;
+var dyy=cd[s+r].offsetWidth/4;
+var x = event.touches[0].pageX;
+le=cd[s+r].offsetLeft;
+
+//tyin.innerHTML=(c-x)+"<br>-"+dy+"<br>"+le+"<br>";
+if((c-x)>0){
+cd[s+r].style.left=-(c-x)+"px";
+if(r<(xt-2)){
+cd[s+r+1].style.display="block";
+cd[s+r+1].style.left=(dy*2)-(c-x)+"px";
+
+}
+}
+else if((c-x)<(0)){
+if(r>0){
+cd[s+r].style.left=-(c-x)+"px";
+cd[s+r-1].style.display="block";
+cd[s+r-1].style.left=-(dy*2)-(c-x)+"px";
+
+}
+else{
+cd[s+r].style.left=-(c-x)+"px";
+}
+}
+
+if(r==0){
+if((c-x)<(-((dy)-100))){
+cd[0].style.left=(dy-100)+"px";
+}
+}
+if(r==(xt-2)){
+if((c-x)>((dy)-100)){
+cd[xt-2].style.left=-((dy)-100)+"px";
+
+}
+
+}
+
+
+
+}
+function fuey(event){ 
+if(r==(xt-2)){
+cd[xt-3].style.left=-(dy*2)+"px";
+
+}
+if(le<(-dy)){
+left();
+}
+if(le>(dy)){
+right();
+}
+if(le<dy){
+cd[s+r].style.left="0px";
+cd[s+r+1].style.left=(dy*2)+"px";
+if(r>0){
+cd[r-1].style.left=-(dy*2)+"px";
+cd[s+r+1].style.left=(dy*2)+"px";
+}
+}
+
+else if(le>(-dy)){
+
+cd[s+r].style.left="0px";
+cd[s+r+1].style.left=(dy*2)+"px";
+//tyin.innerHTML="<br>"+r;
+//cd[s+r].style.animation="right .5s linear";
+//setTimeout(()=>{cd[s+r].style.animation="lft .5s linear";},500);
+}
+
+if(le<0){
+cd[s+r].style.left="0px";
+cd[s+r+1].style.left=(dy*2)+"px";
+//tyin.innerHTML="<br>"+r;
+}
+if(r==(xt-2)){
+
+cd[s+r-1].style.left=-(dy*2)+"px";
+}
+le=0;
+}
+
+
+
+function left(){
+if(r<(divs-1)){
+cd[s+r].style.left=-(dy*2)+"px";
+cd[s+r].style.display="none";
+r=r+1;
+document.getElementById("innercov").style.backgroundPosition=-(r*50)+"px 0px";
+cd[s+r].style.display="block";
+cd[s+r].style.left="0px";
+//cd[s+r].style.animation="left .1s linear";
+setTimeout(()=>{cd[s+r].style.animation="lft .5s linear";},500)
+
+
+//setTimeout(()=>{cd[s].style.animation="lft .5s linear";},500)
+}
+else{
+cd[s+r].style.left="0px";
+//cd[s+r].style.animation="right .5s linear";
+setTimeout(()=>{cd[s].style.animation="lft .5s linear";},500)
+
+}
+}
+
+
+
+function right(){
+if(r>=1){
+document.getElementById("innercov").style.backgroundPosition=-(r*50-50)+"px 0px";
+cd[s+r].style.left="0px";
+cd[s+r].style.display="none";
+cd[r-1].style.left="0px";
+cd[r-1].style.display="block";
+
+//cd[r-1].style.animation="rightt .1s linear";
+//setTimeout(()=>{cd[r-1].style.animation="lft .5s linear";},500)
+r=r-1;
+
+//setTimeout(()=>{cd[s].style.animation="lft .5s linear";},500)
+}
+else{
+cd[s+r].style.left="0px";
+
+
+if(r>0){
+cd[r-1].style.left=-(dy*2)+"px";
+}
+//cd[s+r].style.animation="right .5s linear";
+
+
+}
+}
+</script>
+</body>
+</html>
