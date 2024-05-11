@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart Phone v3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/css/font-awesome.css" >
+<link rel="stylesheet" href="css/animate.css" >
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="https://prateek-chaubey.github.io/slider/slides.js"></script>
+</head>
+<style type="text/css">
+*{
+padding:0;
+margin:0;
+font-family:Roboto;
+outline:0;
+}
+.whole{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+}
+#mobile_cover{
+margin:auto;
+margin-top:20px;
+height:430px;
+overflow:hidden;
+position:relative;
+width:85%;
+border:5px solid #000;
+background:#000;
+border-radius:20px;
+}
+#camera{
+background:#111;
+position:relative;
+height:35px;
+width:33px;
+z-index:9;
+margin:auto;
+border:2px solid #000;
+top:-15px;
+border-radius:50%;
+}
+#camera:before{
+content:'';
+height:10px;
+width:10px;
+position:absolute;
+top:18px;
+left:12px;
+border-radius:50%;
+display:block;
+z-index:9999;
+background:radial-gradient(circle,#0dd,#000,#0dd);
+}
+#camera:after{
+content:'';
+height:16px;
+width:16px;
+position:absolute;
+top:15px;
+left:9px;
+z-index:99;
+border-radius:50%;
+display:block;
+background:#444;
+}
+#nav{
+background: transparent;
+height:30px;
+z-index:9997885899655;
+position:absolute;
+width:100%;
+overflow:hidden;
+top:0;
+border-radius:15px 15px 0 0;
+color:#fff;
+}
+#battery{
+width:30px;
+height:10px;
+position:absolute;
+right:5px;
+top:8px;
+transform:rotate(180deg);
+border:1px solid #fff;
+border-radius:10px;
+}
+#batprog{
+border-radius:0px 20px 20px 0px;
+height:100%;
+font-size:10px;
+text-align:center;
+line-height:10px;
+transform:rotate(180deg);
+position:absolute;
+background:rgba(255,255,255,.7);
+width:0px;
+}
+#noti-wifi{
+position:absolute;
+right:45px;
+top:6px;
+}
+#time{
+font-size:13px;
+margin-left:5px;
+margin-top:5px;
+}
+#home,#recent{
+position:relative;
+height:12px;
+width:12px;
+border-radius:50%;
+left:143px;
+background:rgba(255,255,255,.9);
+bottom:35px;
+}
+#home::after{
+content:'';
+width:14px;
+height:14px;
+border-radius:50%;
+border:2px solid #fff;
+position:absolute;
+top:-3px;
+left:-3px;
+}
+#recent{
+height:14px;
+bottom:35px;
+width:14px;
+border-radius:2px;
+position:absolute;
+left:230px;
+margin:0;
+background:rgba(255,255,255,.9);
+}
+#back{
+bottom:33px;
+position:absolute;
+left:34px;
+background-size:cover;
+border-top: 9px  solid transparent;
+border-bottom:9px solid transparent;
+border-right:16px solid rgba(255,255,255,.9);
+border-radius:2px;
+margin:0;
+}
+.kl{
+z-index:999999999;
+display:flex;
+}
+#tray{
+height:70px;
+width:100%;
+position:absolute;
+z-index:9999999999999;
+display:flex;
+bottom:40px;
+}
+#bottomapps{
+height:70px;
+width:100%;
+position:absolute;
+z-index:9999999999999;
+display:flex;
+bottom:140px;
+}
+.phone {
+background:url(https://prateek-chaubey.github.io/slider/img/call.png);
+}
+.cont{
+background:url(https://prateek-chaubey.github.io/slider/img/cont.png);
+}
+.chro {
+background:url(https://prateek-chaubey.github.io/slider/img/chro.png);
+}
+.cam{
+background:url(https://prateek-chaubey.github.io/slider/img/cam.png);
+}
+.play {
+background:url(https://prateek-chaubey.github.io/slider/img/gplay.png);
+height:45px;
+width:45px;
+margin:15px;
+background-repeat:no-repeat;
+background-size:40px;
+}
+.brow{
+background:url(https://prateek-chaubey.github.io/slider/img/brow.png);
+}
+.calen {
+position:relative;
+background:url(https://prateek-chaubey.github.io/slider/img/calen.png);
+}
+.wall{
+background:url(https://prateek-chaubey.github.io/slider/img/wall.png);
+}
+#clock{
+position:absolute;
+top:40px;
+width:20px;
+color:#fff;
+left:10px;
+font-size:40px;
+font-weight:lighter;
+}
+#weather{
+height:50px;
+position:absolute;
+top:40px;
+right:20px;
+width:50px;
+background:url("https://prateek-chaubey.github.io/slider/img/wea.png");
+background-size:cover;
+}
+#calenday{
+font-size:12px;
+color:#fff;
+position:absolute;
+top:-2px;
+left:12px;
+}
+#calendayy{
+font-size:30px;
+color:#f00;
+position:absolute;
+top:10px;
+left:6px;
+}
+#inpu{
+position:absolute;
+top:150px;
+background:url("https://prateek-chaubey.github.io/slider/img/goo.png");
+background-size:cover;
+background-repeat:no-repeat;
+background-position:0;
+padding-left:75px;
+padding-right:30px;
+left:13px;
+height:30px;
+border-radius:20px;
+border:0;
+width:90%;
+}
+#appstray{
+margin-top:40px;
+}
+.game{
+background:url(https://prateek-chaubey.github.io/slider/img/game.png);
+}
+.sett {
+position:relative;
+background:url(https://prateek-chaubey.github.io/slider/img/sett.png);
+}
+.edge{
+background:url(https://prateek-chaubey.github.io/slider/img/edge.png);
+}
+.clockk{
+background:rgb(47,62,82);
+border-radius:15px;
+border:2px solid #fff;
+}
+#cltime{
+color:#f01;
+font-size:15px;
+line-height:40px;
+}
+.tw {
+position:relative;
+background:url(https://prateek-chaubey.github.io/slider/img/tw.png);
+}
+.insta{
+background:url(https://prateek-chaubey.github.io/slider/img/insta.png);
+}
+.fb {
+position:relative;
+background:url(https://prateek-chaubey.github.io/slider/img/ze.png);
+}
+.vp{
+background:url(https://prateek-chaubey.github.io/slider/img/vpn.png);
+}
+.li {
+position:relative;
+background:url(https://prateek-chaubey.github.io/slider/img/app08.png);
+}
+.yt{
+background:url(https://prateek-chaubey.github.io/slider/img/app13.png);
+}
+.gm {
+position:relative;
+background:url(https://prateek-chaubey.github.io/slider/img/app12.png);
+}
+.wa{
+background:url(https://prateek-chaubey.github.io/slider/img/app09.png);
+}
+.calc {
+position:relative;
+background:url(https://prateek-chaubey.github.io/slider/img/calc.png);
+}
+.mus{
+background:url(https://prateek-chaubey.github.io/slider/img/mus.png);
+}
+.link {
+position:relative;
+background:url(https://prateek-chaubey.github.io/slider/img/link.png);
+}
+.w{
+background:url(https://prateek-chaubey.github.io/slider/img/app1.png);
+}
+.file {
+position:relative;
+background:url(https://prateek-chaubey.github.io/slider/img/file.png);
+}
+.rad{
+background:url(https://prateek-chaubey.github.io/slider/img/rad.png);
+}
+.gal {
+position:relative;
+background:url(https://prateek-chaubey.github.io/slider/img/gal.png);
+}
+.msg{
+background:url(https://prateek-chaubey.github.io/slider/img/msg.png);
+}
+.app{
+height:45px;
+width:45px;
+margin:15px;
+margin-top:10px;
+background-repeat:no-repeat;
+background-size:cover;
+}
+#powerbtn{
+height: 55px;
+width:10px;
+border-radius:10px;
+background:#000;
+position:absolute;
+top:80px;
+right:20px;
+}
+</style>
+<body>
+<div class="whole" >
+<div id="powerbtn" ></div>
+<div id="mobile_cover" >
+<div id="camera" ></div>
+<div id="nav" ><div id="time" ></div><div id="noti-wifi"><i class="fa fa-wifi" ></i></div><div id="battery" ><div id="batprog" ></div></div></div>
+
+<!--slider-->
+<div class="slider slider_apps">
+
+<div>
+<div id="clock" >03:45</div>
+<div id="weather" ></div>
+<input type="search"  id="inpu" />
+<div id="bottomapps" >
+<a href="market://details?id=com.android.vending" ><div class="play " ></div></a><div class="calen app" ><div id="calenday" ></div><div id="calendayy" ></div></div>
+<a href="https://bing.com" target="_blank" ><div class="brow app" ></div></a><div class="wall app" ></div>
+</div>
+</div>
+
+<div>
+<div id="appstray" >
+<div style="display:flex" >
+<div class="game app" ></div><div class="sett app" ></div>
+<a href="https://bing.com" target="_blank" ><div class="edge app" ></div></a><div class="clockk app" ><div id="cltime" ></div></div>
+</div>
+<div style="display:flex" >
+<a href="https://mobile.twitter.com"  ><div class="tw app" ></div></a><a href="https://instagram.com"   ><div class="insta app" ></div></a>
+<a href="fb://" ><div class="fb app" ></div></a><a href="https://proxysite.com" target="_blank"  ><div class="vp app" ></div></a>
+</div>
+<div style="display:flex" >
+<a href="fblite://" ><div class="li app" ></div></a><a href="mailto:" ><div class="gm app" ></div></a>
+<a href="https://youtu.be" ><div class="yt app" ></div></a><a href="https://chat.whatsapp.com" ><div class="wa app" ></div></a>
+</div>
+<div style="display:flex" >
+<a href="https://google.com/search?q=calculator" target="_blank" ><div class="calc app" ></div></a><a href="https://www.mxplayer.in" ><div class="mus app" ></div></a>
+<a href="https://linkedin.com" target="_blank"  ><div class="link app" ></div></a><a href="https://codepen.io" target="_blank"  ><div class="w app" ></div></a>
+</div>
+</div>
+</div>
+
+<div>
+<div id="appstray" >
+<div style="display:flex" >
+<div class="rad app" ></div><div class="gal app" ></div>
+<div class="msg app" ></div><a href="dwz.cn" ><div class="file app" ></div></a>
+</div>
+</div>
+</div>
+
+<div class="nav_indicators"></div>
+</div>
+<!--slider-->
+
+<!--favorite tray-->
+<div id="tray" >
+<a href="tel:" ><div class="phone app" ></div></a><a href="tel:" ><div class="cont app" ></div></a>
+<a href="https://google.com" target="_blank"  ><div class="chro app" ></div></a><div class="cam app" ></div>
+</div>
+<!--favorite tray-->
+
+<!--navigation bar-->
+<div class="kl"  style="position:absolute;margin-top:9px;margin-left:8px;bottom:-25px;" id="k" >
+<div id="back" onclick="back()"></div>
+<div id="home" onclick="home()" ></div>
+<div id="recent" onclick="recent()"></div>
+</div>
+<!--navigation bar-->
+
+
+</div>
+</div>
+<script type="text/javascript">
+
+
+
+////////////////////////
+setInterval(function(){
+var time= new Date();
+var hrs = time.getHours();
+var min = time.getMinutes();
+var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+var date = time.getDate();
+var day = days[time.getDay()];
+var en = 'AM';
+if(hrs>12){
+en='PM';
+}
+if(hrs>12){
+hrs=hrs-12;
+}
+if(hrs<10){
+hrs='0'+hrs;
+}
+if(date<10){
+date='0'+date;
+}
+if(min<10){
+min='0'+min;
+}
+document.getElementById("time").innerHTML=hrs +':'+min+' '+en;
+document.getElementById("clock").innerHTML=hrs +':'+min;
+document.getElementById("calenday").innerHTML=day;
+document.getElementById("calendayy").innerHTML=date;
+document.getElementById("cltime").innerHTML=hrs +':'+min;
+},50);
+////////////////////////
+
+////////////////////////
+var battery_level; 
+navigator.getBattery().then(function(battery) { 
+ function updateAllBatteryInfo(){ 
+ battery_level=(battery.level*100)|0; 
+ updateLevelInfo(); 
+ } 
+ updateAllBatteryInfo(); 
+ battery.addEventListener('levelchange', 
+ function(){ 
+ updateLevelInfo(); 
+ }); 
+battery.addEventListener('chargingchange', 
+function(){ 
+updateCharge(); 
+}); 
+updateCharge(); 
+function updateCharge(){  
+if(battery.charging==true){
+document.getElementById("batprog").style.background="rgba(0,255,0,.7)";
+document.getElementById("batprog").innerHTML="<"+'i class="fa fa-bolt"'+"><"+"/"+"i>";
+}
+else if(battery.charging==false){
+document.getElementById("batprog").innerHTML="";
+document.getElementById("batprog").style.background="rgba(255,255,255,.7)";
+}
+}
+ function updateLevelInfo(){  
+ setText(battery_level); 
+  } 
+  }); 
+ function setText(msg){
+document.getElementById("batprog").style.width=msg+"%";
+//document.getElementById("batprog").innerHTML=msg+"%";
+ };
+
+/////////////////////////////
+</script>
+<script>
+//slider JS starts
+$(document).ready(function() {
+$('.slider_apps').EasySlides({
+'autoplay': false,
+'stepbystep': true,
+'show': 1,
+'loop': false
+});
+});
+//slider JS ends
+</script>
+<style type="text/css">
+/*Slider CSS Starts*/
+div.slider > div:not(.nav_indicators):not(.next_button):not(.prev_button) {
+    background: transperent;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+.slider_apps {
+position:absolute;
+width: 100%;
+background:url("https://images.wallpaperscraft.com/image/space_planets_shine_140681_1080x1920.jpg");
+background-size:cover;
+background-repeat:no-repeat;
+height: 100%;
+margin: 0 auto;
+margin-top:0px;
+top:0px;
+user-select: none;
+
+}
+.slider_apps .hidden {
+opacity: 0;
+position: absolute;
+top: 0px;
+left: 0px;
+width: 100%;
+height: 100%;
+z-index: 0;
+}
+
+.slider_apps .active {
+opacity: 1;
+position: absolute;
+top: -5px;
+border-radius:0 0 20px 20px ;
+left: 0%;
+width: 100%;
+height: 100%;
+z-index: 2;
+animation:ani .25s linear;
+}
+@keyframes ani{
+0%{
+perspective:100px;
+transform:scale(0);
+}
+100%{
+transform:scale(1);
+}
+}
+.nav_indicators {
+    position: absolute;
+    bottom: 110px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    z-index: 50000;
+}
+
+.nav_indicators ul {
+    position: static;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.nav_indicators ul li {
+    position: static;
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin: 2px;
+    padding: 0;
+    overflow: hidden;
+    background: #fff;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.nav_indicators ul li.active {
+    position: static;
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin: 2px;
+    padding: 0;
+    background: #fff;
+    transform:scale(1.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/*Slider CSS Ends*/
+</style>
+</body>
+</html>
